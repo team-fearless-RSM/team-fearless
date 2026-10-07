@@ -147,12 +147,12 @@ footer{border-top:1px solid var(--line);padding:35px 0;text-align:center;color:v
 <div class="simulator">
 <div class="controlpanel"><h3>🤖 Robot Simulator</h3><p style="color:var(--muted)">Move the robot anywhere in the arena. Use the controls, keyboard arrows, or click/tap a spot.</p>
 <label>Movement speed <span id="speedValue">50</span>%</label><input id="speed" type="range" min="10" max="100" value="50">
-<div class="actions" style="justify-content:center;display:grid;grid-template-columns:repeat(3,auto);gap:8px;max-width:230px;margin:18px auto 0">
-<button class="btn" type="button" style="grid-column:2" onclick="moveRobot(0,-1)" aria-label="Move up">↑ Up</button>
-<button class="btn" type="button" onclick="moveRobot(-1,0)" aria-label="Move left">← Left</button>
-<button class="btn primary" type="button" onclick="resetRobot()">Reset</button>
-<button class="btn" type="button" onclick="moveRobot(1,0)" aria-label="Move right">Right →</button>
-<button class="btn" type="button" style="grid-column:2" onclick="moveRobot(0,1)" aria-label="Move down">↓ Down</button>
+<div class="actions" style="justify-content:center;display:grid;grid-template-columns:repeat(3,auto);grid-template-rows:repeat(3,auto);gap:8px;max-width:260px;margin:18px auto 0">
+<button class="btn" type="button" style="grid-column:2;grid-row:1" onclick="moveRobot(0,-1)" aria-label="Move up">↑ Up</button>
+<button class="btn" type="button" style="grid-column:1;grid-row:2" onclick="moveRobot(-1,0)" aria-label="Move left">← Left</button>
+<button class="btn primary" type="button" style="grid-column:2;grid-row:2" onclick="resetRobot()" aria-label="Reset robot">Reset</button>
+<button class="btn" type="button" style="grid-column:3;grid-row:2" onclick="moveRobot(1,0)" aria-label="Move right">Right →</button>
+<button class="btn" type="button" style="grid-column:2;grid-row:3" onclick="moveRobot(0,1)" aria-label="Move down">↓ Down</button>
 </div></div>
 <div class="robotpanel"><h3>Live telemetry</h3><p id="telemetry" style="color:var(--green)">X: 50% | Y: 50% | Speed: 50%</p><div class="robotstage" id="robotStage" aria-label="Robot movement arena"><div id="robot" class="robot"><span class="wheel w1"></span><span class="wheel w2"></span></div></div><p style="color:var(--muted);font-size:12px;margin:10px 0 0">Tip: click or tap anywhere inside the arena to move the robot there.</p></div>
 </div></div></section>
