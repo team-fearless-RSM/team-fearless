@@ -33,7 +33,8 @@ section{padding:100px 0;border-top:1px solid var(--line)}.sectionhead{display:fl
 footer{border-top:1px solid var(--line);padding:35px 0;text-align:center;color:var(--muted);font-size:13px}footer a{color:var(--orange)}
 .season-archive{margin-top:42px;padding:28px;border:1px solid rgba(255,255,255,.09);border-radius:24px;background:linear-gradient(145deg,rgba(18,19,27,.9),rgba(8,9,13,.88));box-shadow:0 20px 60px rgba(0,0,0,.18)}.season-archive+.season-archive{margin-top:24px}.season-archive-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}.season-archive-head>div{display:flex;align-items:center;gap:16px}.season-archive-head h3{font-size:30px;letter-spacing:-.035em;margin:6px 0 0}.archive-year{font-size:44px;font-weight:950;line-height:1;color:rgba(255,116,23,.28)}.archive-count{font-size:11px;font-weight:950;letter-spacing:.14em;color:#9da4b2;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:8px 11px;white-space:nowrap}.season-gallery{grid-template-columns:1.4fr .8fr .8fr;grid-auto-rows:205px}.season-gallery .tile:first-child{grid-row:span 2}.season-current-archive{border-color:rgba(255,116,23,.22);background:radial-gradient(circle at 85% 20%,rgba(255,116,23,.10),transparent 28%),linear-gradient(145deg,#11100d,#090a0d)}.live-count{color:var(--orange2);border-color:rgba(255,116,23,.25)}.current-archive-card{min-height:250px;border:1px dashed rgba(255,116,23,.28);border-radius:19px;padding:32px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(255,116,23,.035),rgba(255,255,255,.015))}.current-orbit{position:absolute;width:270px;height:270px;border:1px solid rgba(255,116,23,.13);border-radius:50%;right:5%;top:50%;transform:translateY(-50%);box-shadow:0 0 0 45px rgba(255,116,23,.018),0 0 0 90px rgba(255,116,23,.012)}.current-orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 20px var(--orange);right:28px;top:35px}.current-archive-card>div:last-child{position:relative;z-index:1;max-width:650px}.current-archive-card h3{font-size:34px;letter-spacing:-.04em;margin:8px 0}.current-archive-card p{color:var(--muted);margin:0;max-width:620px}.future-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:950;color:var(--orange)}.current-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.current-tags span{font-size:10px;font-weight:950;letter-spacing:.1em;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,116,23,.22);color:var(--orange2);background:rgba(255,116,23,.05)}@media(max-width:820px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0a0b0f;padding:15px 4%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.menu{display:block}.grid,.seasons{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.sectionhead{display:block}.sectionhead>p{margin-top:18px}.simulator,.gallery{grid-template-columns:1fr}.controlpanel .actions .btn{width:auto}.gallery{grid-auto-rows:180px}.gallery .tile:first-child{grid-row:auto}.contactgrid{grid-template-columns:1fr}.hero{padding:60px 0}h1{font-size:65px}}
 @media(max-width:460px){.stats{grid-template-columns:1fr}.actions .btn{width:100%}.award{align-items:flex-start}}
-/* SECTION-SPECIFIC THEMES */
+/* FEARLESS CONTROL ROOM */
+.control-room{border:1px solid #30365a;border-radius:24px;background:linear-gradient(145deg,#0b0e1b,#07080e);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.28)}.control-room-top{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid #252a46;background:rgba(139,147,255,.035)}.system-title{display:flex;align-items:center;gap:11px}.system-title strong{display:block;font-size:12px;letter-spacing:.14em}.system-title small{display:block;color:#737b9e;font-size:9px;letter-spacing:.12em;margin-top:2px}.system-pulse{width:9px;height:9px;border-radius:50%;background:#63e6be;box-shadow:0 0 15px #63e6be;animation:pulse 2s infinite}.system-status{font-size:10px;font-weight:950;letter-spacing:.12em;color:#63e6be}.control-room-grid{display:grid;grid-template-columns:280px 1fr;min-height:480px}.control-stack{padding:18px;display:grid;align-content:start;gap:18px;background:rgba(255,255,255,.012);border-right:1px solid #252a46}.dashboard-card{border:1px solid #272d4c;border-radius:16px;padding:18px;background:#0d1020}.dashboard-label{font-size:9px;font-weight:950;letter-spacing:.16em;color:#737b9e;margin-bottom:8px}.dashboard-value{font-size:34px;font-weight:950;line-height:1;margin:10px 0 14px;color:#f5f6ff}.dashboard-value small{font-size:9px;color:#737b9e;letter-spacing:.12em;margin-left:5px}.dashboard-card input{width:100%;accent-color:#8b93ff}.direction-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;max-width:190px;margin:18px auto 12px}.dash-btn{height:43px;border:1px solid #30365a;background:#151932;color:#dfe2ff;border-radius:10px;font-weight:950;cursor:pointer;transition:.18s}.dash-btn:hover{border-color:#8b93ff;background:#1b2040;transform:translateY(-2px)}.dash-btn:nth-child(1){grid-column:2}.dash-btn:nth-child(2){grid-column:1;grid-row:2}.dash-btn:nth-child(3){grid-column:2;grid-row:2}.dash-btn:nth-child(4){grid-column:3;grid-row:2}.dash-btn:nth-child(5){grid-column:2;grid-row:3}.reset-btn{color:#8b93ff}.control-hint{text-align:center;font-size:8px;color:#5e6686;letter-spacing:.12em}.system-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #202540;font-size:12px;color:#9da4bf}.system-row:last-child{border-bottom:0}.system-row b{font-size:9px;letter-spacing:.1em;color:#8b93ff}.system-row b.ok{color:#63e6be}.arena-card{padding:18px}.arena-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:12px}.arena-head strong{font-size:13px;letter-spacing:.08em}.coordinates{font-family:monospace;font-size:12px;color:#8b93ff}.coordinates span{color:#4c5373;margin:0 5px}.control-arena{height:390px;background-color:#080b16;background-image:linear-gradient(rgba(139,147,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(139,147,255,.055) 1px,transparent 1px);background-size:32px 32px;border:1px solid #30365a;border-radius:16px;cursor:crosshair;overflow:hidden}.control-arena:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(139,147,255,.08),transparent 42%);pointer-events:none}.field-corner{position:absolute;width:28px;height:28px;border-color:#8b93ff;opacity:.45}.corner-tl{left:16px;top:16px;border-left:1px solid;border-top:1px solid}.corner-tr{right:16px;top:16px;border-right:1px solid;border-top:1px solid}.corner-bl{left:16px;bottom:16px;border-left:1px solid;border-bottom:1px solid}.corner-br{right:16px;bottom:16px;border-right:1px solid;border-bottom:1px solid}.field-center-line{position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed rgba(139,147,255,.15)}.field-center-dot{position:absolute;width:8px;height:8px;border:1px solid #8b93ff;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.5}.control-arena .robot{width:82px;height:58px;background:linear-gradient(145deg,#59617c,#252a42);border:3px solid #8b93ff;border-radius:12px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:left .22s ease,top .22s ease;box-shadow:0 0 28px rgba(139,147,255,.22)}.control-arena .robot-core{position:absolute;width:17px;height:17px;border-radius:50%;background:#8b93ff;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 18px #8b93ff}.control-arena .robot:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#63e6be;right:8px;top:8px;box-shadow:0 0 10px #63e6be}.control-arena .wheel{position:absolute;width:20px;height:20px;border-radius:5px;background:#080a11;border:1px solid #444b6d;bottom:-11px}.control-arena .w1{left:8px}.control-arena .w2{right:8px}.target-reticle{position:absolute;width:32px;height:32px;border:1px solid rgba(99,230,190,.8);border-radius:50%;transform:translate(-50%,-50%);left:50%;top:50%;pointer-events:none;opacity:0;transition:.2s}.target-reticle:after{content:"";position:absolute;inset:7px;border:1px dashed rgba(99,230,190,.7);border-radius:50%}.arena-crosshair{position:absolute;left:50%;top:50%;width:70px;height:70px;transform:translate(-50%,-50%);border:1px solid rgba(139,147,255,.10);border-radius:50%;pointer-events:none}.arena-footer{display:flex;justify-content:space-between;padding-top:11px;color:#59617f;font-size:8px;letter-spacing:.13em}.arena-footer b{color:#63e6be}@media(max-width:820px){.control-room-grid{grid-template-columns:1fr}.control-stack{border-right:0;border-bottom:1px solid #252a46}.arena-head{display:block}.coordinates{margin-top:8px}.control-arena{height:330px}}\n/* SECTION-SPECIFIC THEMES */
 #about{background:radial-gradient(circle at 15% 20%,rgba(255,116,23,.09),transparent 32%),#08090c}
 #seasons{background:linear-gradient(180deg,#090b10,#0d1017)}
 #seasons .season{background:linear-gradient(145deg,#171c27,#0b0e14);border-color:#303846}
@@ -309,20 +310,52 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 </div></section>
 
 <section id="lab" class="reveal"><div class="container">
-<div class="sectionhead"><div><div class="kicker">09 — Interactive Code Lab</div><h2>Control the robot.</h2></div><p>Move the virtual robot around the arena using the controls, your keyboard, or by clicking anywhere you want it to go.</p></div>
+<div class="sectionhead"><div><div class="kicker">09 — Fearless Control Room</div><h2>Control the robot.</h2></div><p>A small taste of the systems thinking behind robotics — position, speed, controls and live telemetry.</p></div>
 
-<div class="simulator">
-<div class="controlpanel"><h3>🤖 Robot Simulator</h3><p style="color:var(--muted)">Move the robot anywhere in the arena. Use the controls, keyboard arrows, or click/tap a spot.</p>
-<label>Movement speed <span id="speedValue">50</span>%</label><input id="speed" type="range" min="10" max="100" value="50">
-<div class="actions" style="justify-content:center;display:grid;grid-template-columns:repeat(3,auto);grid-template-rows:repeat(3,auto);gap:8px;max-width:260px;margin:18px auto 0">
-<button class="btn" type="button" style="grid-column:2;grid-row:1" onclick="moveRobot(0,-1)" aria-label="Move up">↑ Up</button>
-<button class="btn" type="button" style="grid-column:1;grid-row:2" onclick="moveRobot(-1,0)" aria-label="Move left">← Left</button>
-<button class="btn primary" type="button" style="grid-column:2;grid-row:2" onclick="resetRobot()" aria-label="Reset robot">Reset</button>
-<button class="btn" type="button" style="grid-column:3;grid-row:2" onclick="moveRobot(1,0)" aria-label="Move right">Right →</button>
-<button class="btn" type="button" style="grid-column:2;grid-row:3" onclick="moveRobot(0,1)" aria-label="Move down">↓ Down</button>
-</div></div>
-<div class="robotpanel"><h3>Live telemetry</h3><p id="telemetry" style="color:var(--green)">X: 50% | Y: 50% | Speed: 50%</p><div class="robotstage" id="robotStage" aria-label="Robot movement arena"><div id="robot" class="robot"><span class="wheel w1"></span><span class="wheel w2"></span></div></div><p style="color:var(--muted);font-size:12px;margin:10px 0 0">Tip: click or tap anywhere inside the arena to move the robot there.</p></div>
-</div></div></section>
+<div class="control-room">
+<div class="control-room-top">
+<div class="system-title"><span class="system-pulse"></span><div><strong>FEARLESS CONTROL SYSTEM</strong><small>VIRTUAL ROBOT • TEST ENVIRONMENT</small></div></div>
+<div class="system-status">● ONLINE</div>
+</div>
+
+<div class="control-room-grid">
+<div class="control-stack">
+<div class="dashboard-card">
+<div class="dashboard-label">DRIVE CONTROL</div>
+<div class="dashboard-value"><span id="speedValue">50</span><small>% SPEED</small></div>
+<input id="speed" type="range" min="10" max="100" value="50">
+<div class="direction-pad">
+<button class="dash-btn" type="button" onclick="moveRobot(0,-1)" aria-label="Move up">▲</button>
+<button class="dash-btn" type="button" onclick="moveRobot(-1,0)" aria-label="Move left">◀</button>
+<button class="dash-btn reset-btn" type="button" onclick="resetRobot()" aria-label="Reset robot">●</button>
+<button class="dash-btn" type="button" onclick="moveRobot(1,0)" aria-label="Move right">▶</button>
+<button class="dash-btn" type="button" onclick="moveRobot(0,1)" aria-label="Move down">▼</button>
+</div>
+<div class="control-hint">ARROW KEYS • D-PAD • CLICK ARENA</div>
+</div>
+
+<div class="dashboard-card">
+<div class="dashboard-label">SYSTEMS</div>
+<div class="system-row"><span>Drive train</span><b class="ok">READY</b></div>
+<div class="system-row"><span>Navigation</span><b class="ok">ACTIVE</b></div>
+<div class="system-row"><span>Telemetry</span><b class="ok">LIVE</b></div>
+<div class="system-row"><span>Mode</span><b id="modeStatus">MANUAL</b></div>
+</div>
+</div>
+
+<div class="arena-card">
+<div class="arena-head"><div><div class="dashboard-label">FIELD VIEW</div><strong>ROBOT ARENA / LIVE POSITION</strong></div><div class="coordinates" id="telemetry">X 50% <span>•</span> Y 50%</div></div>
+<div class="robotstage control-arena" id="robotStage" aria-label="Robot movement arena">
+<div class="field-corner corner-tl"></div><div class="field-corner corner-tr"></div><div class="field-corner corner-bl"></div><div class="field-corner corner-br"></div>
+<div class="field-center-line"></div><div class="field-center-dot"></div>
+<div class="robot"><div class="robot-core"></div><span class="wheel w1"></span><span class="wheel w2"></span></div>
+<div class="target-reticle" id="targetReticle"></div>
+<div class="arena-crosshair"></div>
+</div>
+<div class="arena-footer"><span>FIELD STATUS <b>READY</b></span><span>INPUT <b>MANUAL</b></span><span>LINK <b>STABLE</b></span></div>
+</div>
+</div>
+</div></section>
 
 <section id="team" class="reveal"><div class="container">
 <div class="sectionhead"><div><div class="kicker">10 — The people</div><h2>Meet the Fearless.</h2></div><p>Different strengths. One team — CAD, programming, build, electronics, strategy, outreach and leadership.</p></div>
@@ -346,15 +379,15 @@ function toggleMenu(){const n=document.querySelector('.navlinks');n.style.displa
 async function submitContact(e){e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]');status.textContent='Sending…';button.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(res.ok){form.reset();status.textContent='Message sent ✓ Thank you for contacting Team Fearless.'}else{status.textContent='Could not send the message. Please try again or email us directly.'}}catch(err){status.textContent='Connection issue. Please try again or email us directly.'}finally{button.disabled=false}}
 const speedInput=document.getElementById('speed');
 const speedValue=document.getElementById('speedValue');
-const robot=document.getElementById('robot');
+const robot=document.querySelector('#robotStage .robot');
 const robotStage=document.getElementById('robotStage');
 let robotX=50,robotY=50;
 speedInput.addEventListener('input',()=>{speedValue.textContent=speedInput.value;updateTelemetry()});
 function renderRobot(){robot.style.left=robotX+'%';robot.style.top=robotY+'%';updateTelemetry()}
-function updateTelemetry(){document.getElementById('telemetry').textContent='X: '+Math.round(robotX)+'% | Y: '+Math.round(robotY)+'% | Speed: '+speedInput.value+'%'}
+function updateTelemetry(){document.getElementById('telemetry').innerHTML='X '+Math.round(robotX)+'% <span>•</span> Y '+Math.round(robotY)+'%';}
 function moveRobot(dx,dy){const step=Number(speedInput.value)/5;robotX=Math.max(7,Math.min(93,robotX+dx*step));robotY=Math.max(14,Math.min(86,robotY+dy*step));renderRobot()}
 function resetRobot(){robotX=50;robotY=50;renderRobot()}
-robotStage.addEventListener('click',e=>{const rect=robotStage.getBoundingClientRect();robotX=Math.max(7,Math.min(93,((e.clientX-rect.left)/rect.width)*100));robotY=Math.max(14,Math.min(86,((e.clientY-rect.top)/rect.height)*100));renderRobot()});
+robotStage.addEventListener('click',e=>{const rect=robotStage.getBoundingClientRect();robotX=Math.max(7,Math.min(93,((e.clientX-rect.left)/rect.width)*100));robotY=Math.max(14,Math.min(86,((e.clientY-rect.top)/rect.height)*100));const target=document.getElementById('targetReticle');target.style.left=robotX+'%';target.style.top=robotY+'%';target.style.opacity='1';setTimeout(()=>target.style.opacity='0',650);renderRobot()});
 document.addEventListener('keydown',e=>{const tag=e.target.tagName.toLowerCase();if(['input','textarea','select','button'].includes(tag))return;const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(moves[e.key]){e.preventDefault();moveRobot(...moves[e.key])}});
 renderRobot();
 let currentPhotos=[];
