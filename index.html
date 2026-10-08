@@ -279,18 +279,18 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <div class="season-archive">
 <div class="season-archive-head"><div><span class="archive-year">01</span><div><div class="kicker">FTC • 2024–25</div><h3>First Championship Chapter.</h3></div></div><span class="archive-count">03 MOMENTS</span></div>
 <div class="gallery season-gallery">
-<a class="tile" href="assets/2024-25/2024-25-team.jpg.jpg" data-title="2024–25 • Team + Robot"><img src="assets/2024-25/2024-25-team.jpg.jpg" alt="Team Fearless 2024–25 team with robot" loading="lazy"><div><h3>Team + Robot</h3><p>Championship season</p></div></a>
-<a class="tile" href="assets/2024-25/2024-25-pit.jpg.jpg" data-title="2024–25 • Pit"><img src="assets/2024-25/2024-25-pit.jpg.jpg" alt="Team Fearless 2024–25 pit and robot" loading="lazy"><div><h3>Pit</h3><p>Engineering & presentation</p></div></a>
-<a class="tile" href="assets/2024-25/2024-25-robot.jpg.jpg" data-title="2024–25 • Robot ASTRO"><img src="assets/2024-25/2024-25-robot.jpg.jpg" alt="Team Fearless 2024–25 robot ASTRO" loading="lazy"><div><h3>ASTRO</h3><p>Robot design & build</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2024-25/2024-25-team.jpg.jpg" data-title="2024–25 • Team + Robot"><img src="assets/2024-25/2024-25-team.jpg.jpg" alt="Team Fearless 2024–25 team with robot" loading="lazy"><div><h3>Team + Robot</h3><p>Championship season</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2024-25/2024-25-pit.jpg.jpg" data-title="2024–25 • Pit"><img src="assets/2024-25/2024-25-pit.jpg.jpg" alt="Team Fearless 2024–25 pit and robot" loading="lazy"><div><h3>Pit</h3><p>Engineering & presentation</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2024-25/2024-25-robot.jpg.jpg" data-title="2024–25 • Robot ASTRO"><img src="assets/2024-25/2024-25-robot.jpg.jpg" alt="Team Fearless 2024–25 robot ASTRO" loading="lazy"><div><h3>ASTRO</h3><p>Robot design & build</p></div></a>
 </div>
 </div>
 
 <div class="season-archive">
 <div class="season-archive-head"><div><span class="archive-year">02</span><div><div class="kicker">FTC • 2025–26</div><h3>Design. Build. Compete.</h3></div></div><span class="archive-count">04 MOMENTS</span></div>
 <div class="gallery season-gallery">
-<a class="tile" href="assets/2025-26/2025-26-team.jpg.jpg" data-title="2025–26 • Team"><img src="assets/2025-26/2025-26-team.jpg.jpg" alt="Team Fearless 2025–26 team" loading="lazy"><div><h3>Team Fearless</h3><p>Building together</p></div></a>
-<a class="tile" href="assets/2025-26/2025-26-design-award.jpg.jpg" data-title="2025–26 • Design Award"><img src="assets/2025-26/2025-26-design-award.jpg.jpg" alt="Team Fearless 2025–26 Design Award 2nd Place" loading="lazy"><div><h3>Design Award</h3><p>2nd Place</p></div></a>
-<a class="tile" href="assets/2025-26/2025-26-robot.jpg.jpg" data-title="2025–26 • Robot"><img src="assets/2025-26/2025-26-robot.jpg.jpg" alt="Team Fearless 2025–26 robot" loading="lazy"><div><h3>Robot</h3><p>Robot design & engineering</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2025-26/2025-26-team.jpg.jpg" data-title="2025–26 • Team"><img src="assets/2025-26/2025-26-team.jpg.jpg" alt="Team Fearless 2025–26 team" loading="lazy"><div><h3>Team Fearless</h3><p>Building together</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2025-26/2025-26-design-award.jpg.jpg" data-title="2025–26 • Design Award"><img src="assets/2025-26/2025-26-design-award.jpg.jpg" alt="Team Fearless 2025–26 Design Award 2nd Place" loading="lazy"><div><h3>Design Award</h3><p>2nd Place</p></div></a>
+<a class="tile" href="#" onclick="openSeasonPhoto(this);return false;" data-image="assets/2025-26/2025-26-robot.jpg.jpg" data-title="2025–26 • Robot"><img src="assets/2025-26/2025-26-robot.jpg.jpg" alt="Team Fearless 2025–26 robot" loading="lazy"><div><h3>Robot</h3><p>Robot design & engineering</p></div></a>
 <a class="tile" href="assets/team/journey.jpg.jpg" data-title="Team Fearless • Journey"><img src="assets/team/journey.jpg.jpg" alt="Team Fearless journey and innovation board" loading="lazy"><div><h3>The Journey</h3><p>Innovation, outreach & memories</p></div></a>
 </div>
 </div>
@@ -391,8 +391,9 @@ robotStage.addEventListener('click',e=>{const rect=robotStage.getBoundingClientR
 document.addEventListener('keydown',e=>{const tag=e.target.tagName.toLowerCase();if(['input','textarea','select','button'].includes(tag))return;const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(moves[e.key]){e.preventDefault();moveRobot(...moves[e.key])}});
 renderRobot();
 let currentPhotos=[];
-document.querySelectorAll('.season-gallery .tile').forEach(tile=>tile.addEventListener('click',e=>{e.preventDefault();currentPhotos=[...document.querySelectorAll('.season-gallery .tile')];openLightbox(currentPhotos.indexOf(tile));}));
-function openLightbox(i){if(i<0)return;const t=currentPhotos[i];document.getElementById('lightboxImg').src=t.querySelector('img').src;document.getElementById('lightboxImg').alt=t.querySelector('img').alt;document.getElementById('lightboxCaption').textContent=t.dataset.title;document.getElementById('photoLightbox').classList.add('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function openSeasonPhoto(tile){currentPhotos=[...document.querySelectorAll('.season-gallery .tile')];openLightbox(currentPhotos.indexOf(tile));}
+document.querySelectorAll('.season-gallery .tile').forEach(tile=>tile.addEventListener('click',e=>e.preventDefault()));
+function openLightbox(i){if(i<0)return;const t=currentPhotos[i];document.getElementById('lightboxImg').src=t.dataset.image||t.querySelector('img').src;document.getElementById('lightboxImg').alt=t.querySelector('img').alt;document.getElementById('lightboxCaption').textContent=t.dataset.title;document.getElementById('photoLightbox').classList.add('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('photoLightbox').classList.remove('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','true');document.body.style.overflow=''}document.getElementById('photoLightbox').addEventListener('click',e=>{if(e.target.id==='photoLightbox')closeLightbox()});
 function changePhoto(d){const i=currentPhotos.indexOf(currentPhotos.find(x=>x.querySelector('img').src===document.getElementById('lightboxImg').src));openLightbox((i+d+currentPhotos.length)%currentPhotos.length)}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')changePhoto(-1);if(e.key==='ArrowRight')changePhoto(1)});
