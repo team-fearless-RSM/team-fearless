@@ -399,30 +399,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <footer><div class="container">© 2026 <strong>Team Fearless</strong> • iTeach RSM • Built with curiosity & code 🦁<br><a href="#home">Back to top ↑</a></div></footer>
 
 <script>
+<script>
 function toggleMenu(){const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex'}
 async function submitContact(e){e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]');status.textContent='Sending…';button.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(res.ok){form.reset();status.textContent='Message sent ✓ Thank you for contacting Team Fearless.'}else{status.textContent='Could not send the message. Please try again or email us directly.'}}catch(err){status.textContent='Connection issue. Please try again or email us directly.'}finally{button.disabled=false}}
-const speedInput=document.getElementById('speed');
-const speedValue=document.getElementById('speedValue');
-const robot=document.querySelector('#robotStage .robot');
-const robotStage=document.getElementById('robotStage');
-let robotX=50,robotY=50;
-speedInput.addEventListener('input',()=>{speedValue.textContent=speedInput.value;updateTelemetry()});
-function renderRobot(){robot.style.left=robotX+'%';robot.style.top=robotY+'%';updateTelemetry()}
-function updateTelemetry(){document.getElementById('telemetry').innerHTML='X '+Math.round(robotX)+'% <span>•</span> Y '+Math.round(robotY)+'%';}
-function moveRobot(dx,dy){const step=Number(speedInput.value)/5;robotX=Math.max(7,Math.min(93,robotX+dx*step));robotY=Math.max(14,Math.min(86,robotY+dy*step));renderRobot()}
-function resetRobot(){robotX=50;robotY=50;renderRobot()}
-robotStage.addEventListener('click',e=>{const rect=robotStage.getBoundingClientRect();robotX=Math.max(7,Math.min(93,((e.clientX-rect.left)/rect.width)*100));robotY=Math.max(14,Math.min(86,((e.clientY-rect.top)/rect.height)*100));const target=document.getElementById('targetReticle');target.style.left=robotX+'%';target.style.top=robotY+'%';target.style.opacity='1';setTimeout(()=>target.style.opacity='0',650);renderRobot()});
-document.addEventListener('keydown',e=>{const tag=e.target.tagName.toLowerCase();if(['input','textarea','select','button'].includes(tag))return;const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(moves[e.key]){e.preventDefault();moveRobot(...moves[e.key])}});
-renderRobot();
-let currentPhotos=[];
-function openSeasonPhoto(tile){currentPhotos=[...document.querySelectorAll('.season-gallery .tile')];openLightbox(currentPhotos.indexOf(tile));}
-document.querySelectorAll('.season-gallery .tile').forEach(tile=>tile.addEventListener('click',e=>e.preventDefault()));
-function openLightbox(i){if(i<0)return;const t=currentPhotos[i];document.getElementById('lightboxImg').src=t.dataset.image||t.querySelector('img').src;document.getElementById('lightboxImg').alt=t.querySelector('img').alt;document.getElementById('lightboxCaption').textContent=t.dataset.title;document.getElementById('photoLightbox').classList.add('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeLightbox(){document.getElementById('photoLightbox').classList.remove('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','true');document.body.style.overflow=''}document.getElementById('photoLightbox').addEventListener('click',e=>{if(e.target.id==='photoLightbox')closeLightbox()});
-function changePhoto(d){const i=currentPhotos.indexOf(currentPhotos.find(x=>x.querySelector('img').src===document.getElementById('lightboxImg').src));openLightbox((i+d+currentPhotos.length)%currentPhotos.length)}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')changePhoto(-1);if(e.key==='ArrowRight')changePhoto(1)});
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
 </script>
 </body>
 </html>
