@@ -353,6 +353,8 @@ let currentPhotos=[];
 function filterGallery(season,btn){
  document.querySelectorAll('.galleryfilters .btn').forEach(b=>b.classList.remove('primary'));btn.classList.add('primary');
  document.querySelectorAll('#photoGallery .tile').forEach(x=>x.style.display=(season==='all'||x.dataset.season===season||x.dataset.season==='all')?'flex':'none');
+ const future=document.querySelector('#photoGallery .archive-future');
+ if(future)future.style.display=(season==='all'||future.dataset.season===season)?'flex':'none';
 }
 document.querySelectorAll('#photoGallery .tile').forEach(tile=>tile.addEventListener('click',e=>{e.preventDefault();currentPhotos=[...document.querySelectorAll('#photoGallery .tile')].filter(x=>getComputedStyle(x).display!=='none');openLightbox(currentPhotos.indexOf(tile));}));
 function openLightbox(i){if(i<0)return;const t=currentPhotos[i];document.getElementById('lightboxImg').src=t.querySelector('img').src;document.getElementById('lightboxImg').alt=t.querySelector('img').alt;document.getElementById('lightboxCaption').textContent=t.dataset.title;document.getElementById('photoLightbox').classList.add('open');document.getElementById('photoLightbox').setAttribute('aria-hidden','false');}
