@@ -186,7 +186,7 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 .teaser-hud{position:absolute;left:18px;bottom:18px;font:900 9px monospace;letter-spacing:.13em;color:#737b9e}.teaser-hud b{color:#63e6be;margin-left:10px}
 .control-teaser-copy{padding:42px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #252a46}.control-teaser-copy h3{font-size:clamp(32px,4vw,52px);line-height:.95;letter-spacing:-.05em;margin:10px 0 15px}.control-teaser-copy p{color:var(--muted);max-width:440px;margin:0}
 @media(max-width:820px){.control-teaser{grid-template-columns:1fr}.control-teaser-copy{border-left:0;border-top:1px solid #252a46;padding:30px}.control-teaser-visual{min-height:280px}}
-</style>
+.hero-v2{background:radial-gradient(circle at 50% 45%,rgba(255,116,23,.055),transparent 32%)}.hero-grid{position:absolute;inset:0;opacity:.32;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,transparent 0%,black 25%,black 72%,transparent 100%);pointer-events:none}.hero-wordmark{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);font-size:clamp(90px,18vw,260px);font-weight:950;letter-spacing:-.09em;line-height:1;color:rgba(255,255,255,.018);white-space:nowrap;pointer-events:none}.hero-cross{position:absolute;width:90px;height:90px;opacity:.22;pointer-events:none}.hero-cross:before,.hero-cross:after{content:"";position:absolute;background:var(--orange)}.hero-cross:before{width:1px;height:100%;left:50%}.hero-cross:after{height:1px;width:100%;top:50%}.hero-cross-a{right:7%;top:24%}.hero-cross-b{left:7%;bottom:24%;transform:scale(.65)}.hero-season-line{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.18em}.hero-season-line span:first-child{color:#fff}.hero-season-line i{width:24px;height:1px;background:var(--orange);display:block}.hero-footnote{display:flex;justify-content:center;gap:10px;margin-top:20px;color:#5e6572;font-size:10px;font-weight:900;letter-spacing:.18em}@media(max-width:700px){.hero-wordmark{font-size:28vw}.hero-grid{background-size:34px 34px}.hero-footnote{font-size:8px}.hero-cross{display:none}}</style>
 </style>
 </head>
 <body>
@@ -197,14 +197,17 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 </div></nav>
 
 <main id="home">
-<header class="hero">
+<header class="hero hero-v2">
+<div class="hero-grid"></div><div class="hero-wordmark">FEARLESS</div><div class="hero-cross hero-cross-a"></div><div class="hero-cross hero-cross-b"></div>
 <div class="container">
 <div class="hero-brand-stack"><img class="hero-iteach-top-logo" src="assets/branding/iteach-schools-logo.png" alt="iTeach Schools logo"><img class="hero-logo" src="assets/branding/logo.jpg.png" alt="Team Fearless logo"></div>
 <div class="badge pulse">🤖 FTC • 🏆 NRL • STEM • Innovation</div>
-<h1>BUILD.<br>COMPETE.<br><span class="orange">FEARLESS.</span></h1>
-<p class="hero-copy">Team Fearless is a student-led robotics team at <strong style="color:#fff">iTeach RSM, Mundhwa</strong>, where <strong style="color:#fff">Grades 8–10</strong> students get the opportunity to build, compete and explore technology through hands-on learning.</p>
+<div class="hero-season-line"><span>2026–27</span><i></i><span>BUILDING NOW</span></div>
+<h1>BUILD.<br>BREAK.<br><span class="orange">REBUILD.</span></h1>
+<p class="hero-copy">Ideas become machines here. Students design, test, fail, learn and build again — one fearless iteration at a time.</p>
 <div class="tagline">KAR KE DIKHANGE — HA BHAI HA!</div>
 <div class="actions"><a class="btn primary" href="#seasons">Explore FTC →</a><a class="btn" href="#nrl">Explore NRL →</a><a class="btn" href="#lab">Try the Interactive Lab</a></div>
+<div class="hero-footnote"><span>TEAM FEARLESS</span><span>•</span><span>NO SHORTCUTS. JUST BUILDS.</span></div>
 </div>
 </header>
 
