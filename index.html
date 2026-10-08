@@ -346,42 +346,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 
 <section id="lab" class="reveal"><div class="container">
 <div class="sectionhead"><div><div class="kicker">05 — Interactive Experience</div><h2>Control the robot.</h2></div><p>Curious what it feels like to drive a robot? Step inside the Fearless Control Room.</p></div>
-<div class="control-room-inline">
-<div class="control-room-top"><div class="system-title"><span class="system-pulse"></span><div><strong>FEARLESS CONTROL SYSTEM</strong><small>FTC-STYLE VIRTUAL ROBOT • LIVE FIELD</small></div></div><div class="system-status">● ONLINE</div></div>
-<div class="inline-tabs"><button class="inline-tab active" data-inline-tab="manual" type="button">MANUAL DRIVE</button><button class="inline-tab" data-inline-tab="program" type="button">PROGRAMMING</button><button class="inline-tab" data-inline-tab="auto" type="button">AUTONOMOUS</button></div>
-<div class="control-room-grid">
-<aside class="control-stack">
-<div class="dashboard-card manual-only"><div class="dashboard-label">DRIVE SPEED</div><div class="dashboard-value"><span id="inlineSpeedVal">50</span><small>%</small></div><input id="inlineSpeed" type="range" min="10" max="100" value="50">
-<div class="direction-pad"><button class="dash-btn" data-inline-dir="up" type="button">▲</button><button class="dash-btn" data-inline-dir="left" type="button">◀</button><button class="dash-btn reset-btn" id="inlineReset" type="button">●</button><button class="dash-btn" data-inline-dir="right" type="button">▶</button><button class="dash-btn" data-inline-dir="down" type="button">▼</button></div>
-<div class="control-hint">WASD / ARROWS • Q / E ROTATE • SHIFT BOOST<br>CLICK THE FIELD TO DRIVE THERE</div></div>
-<div class="dashboard-card"><div class="dashboard-label">ROBOT TELEMETRY</div><div class="system-row"><span>X / Y</span><b id="inlineXY">50 / 50</b></div><div class="system-row"><span>HEADING</span><b id="inlineHeading">0°</b></div><div class="system-row"><span>BATTERY</span><b id="inlineBattery" class="ok">100%</b></div></div>
-<div class="dashboard-card"><div class="dashboard-label">SYSTEM STATUS</div><div class="system-row"><span>DRIVE</span><b id="inlineDrive" class="ok">READY</b></div><div class="system-row"><span>SENSOR</span><b id="inlineSensor">CLEAR</b></div></div>
-</aside>
-<section class="arena-card">
-<div class="arena-head"><div><div class="dashboard-label">FIELD</div><strong>LIVE ROBOT POSITION</strong></div><div class="coordinates" id="inlineCoords">50.0 / 50.0</div></div>
-<div class="control-arena" id="inlineArena">
-<div class="field-corner corner-tl"></div><div class="field-corner corner-tr"></div><div class="field-corner corner-bl"></div><div class="field-corner corner-br"></div><div class="field-center-line"></div><div class="field-center-dot"></div><div class="arena-crosshair"></div>
-<div class="robot" id="inlineRobot"><span class="robot-core"></span><span class="wheel w1"></span><span class="wheel w2"></span></div><div class="target-reticle" id="inlineTarget"></div>
-</div>
-<div class="arena-footer"><span>TF / VIRTUAL FIELD</span><span>INPUT: <b>KEYBOARD + FIELD</b></span></div>
-</section>
-</div>
-<div class="inline-workspace">
-<div class="workspace-panel program-panel">
-<div class="workspace-editor"><div class="dashboard-label">SIMPLE AUTONOMOUS CODE</div><textarea id="inlineCode" spellcheck="false">setSpeed(60)
-forward(20)
-turnRight(90)
-forward(25)
-turnLeft(90)
-backward(15)</textarea><div class="workspace-actions"><button class="dash-btn workspace-btn" id="inlineRun" type="button">▶ RUN</button><button class="dash-btn workspace-btn" id="inlineStop" type="button">■ STOP</button><button class="dash-btn workspace-btn" id="inlineExample" type="button">EXAMPLE</button></div></div>
-<div class="workspace-console"><div class="dashboard-label">LIVE TELEMETRY</div><div id="inlineConsole"><div class="console-ok">[SYSTEM] Robot ready.</div><div>[INFO] Commands: forward, backward, turnLeft, turnRight, wait, setSpeed.</div></div></div>
-</div>
-<div class="workspace-panel auto-panel">
-<div class="auto-options"><div><div class="dashboard-label">PRESET ROUTES</div><p>Run a simple autonomous path and watch the robot work in real time.</p><button class="dash-btn workspace-btn" data-inline-route="square" type="button">SQUARE</button><button class="dash-btn workspace-btn" data-inline-route="zigzag" type="button">ZIG-ZAG</button><button class="dash-btn workspace-btn" data-inline-route="dock" type="button">DOCK + RETURN</button></div>
-<div><div class="dashboard-label">FIELD WAYPOINTS</div><p>Click points on the field to build a route.</p><button class="dash-btn workspace-btn" id="inlineWaypoint" type="button">+ ADD WAYPOINTS</button><button class="dash-btn workspace-btn" id="inlineClear" type="button">CLEAR</button><button class="dash-btn workspace-btn" id="inlineRunPath" type="button">▶ RUN PATH</button><div class="waypoint-text" id="inlineWpText">No waypoints.</div></div></div>
-</div>
-<div class="bottom-telemetry"><div><span>X / Y</span><b id="bottomXY">50 / 50</b></div><div><span>HEADING</span><b id="bottomHeading">0°</b></div><div><span>BATTERY</span><b id="bottomBattery">100%</b></div><div><span>DRIVE</span><b id="bottomDrive">READY</b></div><div><span>SENSOR</span><b id="bottomSensor">CLEAR</b></div></div>
-</div>
+<div class="control-teaser">
+<div class="control-teaser-visual"><div class="teaser-grid"></div><div class="teaser-cross"></div><div class="teaser-robot"><span></span></div><div class="teaser-scan"></div><div class="teaser-hud">TF / CONTROL SYSTEM <b>READY</b></div></div>
+<div class="control-teaser-copy"><div class="kicker">FEARLESS CONTROL SYSTEM</div><h3>Your turn to drive.</h3><p>Explore a virtual robot arena, change speed, move the robot and test your controls. The full experience lives on its own page.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="control-room.html" target="_blank" rel="noopener">Enter Control Room →</a></div></div>
 </div>
 </div></section>
 
