@@ -151,6 +151,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 .journey-note{margin-top:18px;color:#c9ced7;font-size:13px;text-align:center}.journey-note b{color:#fff}
 @media(max-width:900px){.journey-track{grid-template-columns:1fr 1fr}.journey-step:nth-child(2){border-right:0}.journey-step:nth-child(-n+3){border-bottom:1px solid var(--line)}.journey-step:last-child{border-right:0}.journey-step:nth-child(3){border-right:1px solid var(--line)}}
 @media(max-width:560px){.engineering-journey .journey-head{display:block}.journey-track{grid-template-columns:1fr}.journey-step,.journey-step:nth-child(3){border-right:0;border-bottom:1px solid var(--line)}.journey-step:last-child{border-bottom:0}.journey-step{min-height:auto}}
+
+/* CHAMPIONSHIP RECORD */
+.championship-timeline{position:relative;max-width:900px;margin:8px auto 0;padding:10px 0}.champ-line{position:absolute;left:50%;top:25px;bottom:25px;width:2px;background:linear-gradient(180deg,rgba(255,209,102,.15),#ffd166,rgba(255,209,102,.18));transform:translateX(-50%)}.champ-item{position:relative;width:50%;padding:0 42px 30px 0}.champ-item:nth-child(odd){margin-left:50%;padding:0 0 30px 42px}.champ-marker{position:absolute;right:-15px;top:20px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#100e08;border:2px solid #ffd166;color:#ffd166;font-size:10px;font-weight:950;z-index:2;box-shadow:0 0 0 7px rgba(255,209,102,.045),0 0 24px rgba(255,209,102,.12)}.champ-item:nth-child(odd) .champ-marker{left:-15px;right:auto}.champ-card{border:1px solid #3b3421;background:linear-gradient(145deg,rgba(25,21,12,.96),rgba(12,11,9,.94));border-radius:20px;padding:25px;transition:.25s}.champ-card:hover{transform:translateY(-4px);border-color:#ffd166;box-shadow:0 18px 50px rgba(0,0,0,.25)}.champ-item.current .champ-card{border-color:rgba(255,209,102,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 18px 55px rgba(0,0,0,.2)}.champ-year{color:#ffd166;font-size:12px;font-weight:950;letter-spacing:.14em}.champ-year span{color:#8e897b;margin-left:8px;font-size:10px}.champ-card h3{font-size:24px;line-height:1.15;margin:10px 0 8px}.champ-card p{color:var(--muted);font-size:14px;margin:0}.champ-tag{display:inline-flex;margin-top:18px;padding:6px 9px;border:1px solid rgba(255,209,102,.25);border-radius:999px;color:#ffd166;font-size:9px;font-weight:950;letter-spacing:.12em}.record-footer{display:flex;justify-content:center;align-items:center;gap:25px;margin-top:8px;color:#746f62;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.record-footer b{color:#ffd166}@media(max-width:700px){.champ-line{left:15px}.champ-item,.champ-item:nth-child(odd){width:100%;margin-left:0;padding:0 0 22px 48px}.champ-marker,.champ-item:nth-child(odd) .champ-marker{left:0;right:auto}.champ-card{padding:21px}.champ-card h3{font-size:21px}}
 </style>
 </head>
 <body>
@@ -258,13 +261,15 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 </div></section>
 
 <section id="achievements" class="reveal"><div class="container">
-<div class="sectionhead"><div><div class="kicker">06 — Achievements</div><h2>Built through challenges.</h2></div><p>Our journey is measured in seasons, lessons, competition experiences and awards.</p></div>
-<div class="timeline">
-<div class="award"><div class="year">2023</div><div><strong>Compass Award</strong><br><span>One of the milestones in our early robotics journey.</span></div></div>
-<div class="award"><div class="year">2024</div><div><strong>Promote Award</strong><br><span>Recognising our effort to grow STEM and robotics outreach.</span></div></div>
-<div class="award"><div class="year">2025</div><div><strong>FTC Top 15</strong><br><span>A major competitive milestone for Team Fearless.</span></div></div>
-<div class="award"><div class="year">2026</div><div><strong>C. V. Raman West India Regional QT — Design Award, 2nd Place</strong><br><span>Celebrating thoughtful engineering and robot design.</span></div></div>
+<div class="sectionhead"><div><div class="kicker">07 — Championship Record</div><h2>Milestones earned.</h2></div><p>Every award is a snapshot of a bigger story — students learning, building, competing and getting better together.</p></div>
+<div class="championship-timeline">
+<div class="champ-line"></div>
+<article class="champ-item"><div class="champ-marker">23</div><div class="champ-card"><div class="champ-year">2023 <span>FOUNDATION</span></div><h3>Compass Award</h3><p>Our journey starts with a milestone that helped define the Fearless spirit.</p><div class="champ-tag">FIRST MILESTONE</div></div></article>
+<article class="champ-item"><div class="champ-marker">24</div><div class="champ-card"><div class="champ-year">2024 <span>GROWTH</span></div><h3>Promote Award</h3><p>A recognition of our effort to grow STEM and robotics outreach beyond the robot itself.</p><div class="champ-tag">OUTREACH</div></div></article>
+<article class="champ-item"><div class="champ-marker">25</div><div class="champ-card"><div class="champ-year">2025 <span>COMPETITION</span></div><h3>FTC Top 15</h3><p>A major competitive milestone — proof that the team could stand among strong FTC teams.</p><div class="champ-tag">TOP 15</div></div></article>
+<article class="champ-item current"><div class="champ-marker">26</div><div class="champ-card"><div class="champ-year">2026 <span>DESIGN</span></div><h3>C. V. Raman West India Regional QT</h3><p><strong>Design Award — 2nd Place.</strong> A milestone celebrating thoughtful engineering, iteration and robot design.</p><div class="champ-tag">DESIGN AWARD • 2ND PLACE</div></div></article>
 </div>
+<div class="record-footer"><span>2023</span><b>4 milestones</b><span>2026</span></div>
 </div></section>
 
 <section id="gallery" class="reveal"><div class="container">
