@@ -399,7 +399,6 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <footer><div class="container">© 2026 <strong>Team Fearless</strong> • iTeach RSM • Built with curiosity & code 🦁<br><a href="#home">Back to top ↑</a></div></footer>
 
 <script>
-<script>
 function toggleMenu(){const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex'}
 async function submitContact(e){e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]');status.textContent='Sending…';button.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(res.ok){form.reset();status.textContent='Message sent ✓ Thank you for contacting Team Fearless.'}else{status.textContent='Could not send the message. Please try again or email us directly.'}}catch(err){status.textContent='Connection issue. Please try again or email us directly.'}finally{button.disabled=false}}
 </script>
