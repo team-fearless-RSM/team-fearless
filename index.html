@@ -174,6 +174,19 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 .nrl-phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.nrl-phase-grid article{display:grid;grid-template-columns:42px 1fr;gap:13px;padding:22px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,var(--panel2),#0b0d12)}.nrl-phase-grid article>span{font-size:12px;color:var(--orange);font-weight:950}.nrl-phase-grid b{font-size:9px;color:#777f8d;letter-spacing:.14em}.nrl-phase-grid h3{margin:4px 0 5px;font-size:19px}.nrl-phase-grid p{margin:0;color:var(--muted);font-size:13px}
 .nrl-timeline{position:relative;display:grid;gap:12px}.nrl-timeline:before{content:"";position:absolute;left:39px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--orange),rgba(255,255,255,.08))}.nrl-timeline-item{position:relative;display:grid;grid-template-columns:80px 1fr;gap:22px;padding:20px 22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.nrl-timeline-item>span{position:relative;z-index:1;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#0b0d12;border:1px solid #3a404b;color:#727987;font-size:8px;font-weight:950;letter-spacing:.08em}.nrl-timeline-item.active{border-color:rgba(57,230,129,.2);background:linear-gradient(90deg,rgba(57,230,129,.035),var(--panel))}.nrl-timeline-item.active>span{border-color:#39e681;color:#39e681;box-shadow:0 0 15px rgba(57,230,129,.2)}.nrl-timeline-item b{font-size:9px;color:#39e681;letter-spacing:.14em}.nrl-timeline-item h3{margin:5px 0;font-size:21px}.nrl-timeline-item p{margin:0;color:var(--muted);font-size:13px}
 @media(max-width:820px){.nrl-launch-grid{grid-template-columns:1fr}.nrl-mission-copy{padding:30px}.nrl-telemetry{margin:0 20px 20px}.nrl-phase-grid{grid-template-columns:1fr}.nrl-timeline-item{grid-template-columns:52px 1fr;gap:14px}.nrl-timeline:before{left:47px}}
+<style>
+.control-teaser{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:1px solid #30365a;border-radius:24px;overflow:hidden;background:linear-gradient(145deg,#0b0e1b,#07080e);box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.control-teaser-visual{min-height:330px;position:relative;overflow:hidden;background:#080b16;background-image:linear-gradient(rgba(139,147,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(139,147,255,.055) 1px,transparent 1px);background-size:34px 34px}
+.teaser-grid{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(139,147,255,.11),transparent 44%)}
+.teaser-cross{position:absolute;left:50%;top:50%;width:180px;height:180px;border:1px solid rgba(139,147,255,.15);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 35px rgba(139,147,255,.025),0 0 0 70px rgba(139,147,255,.018)}
+.teaser-robot{position:absolute;left:50%;top:50%;width:105px;height:70px;transform:translate(-50%,-50%);border:2px solid #8b93ff;border-radius:14px;background:linear-gradient(145deg,#59617c,#252a42);box-shadow:0 0 35px rgba(139,147,255,.3)}
+.teaser-robot:before,.teaser-robot:after{content:"";position:absolute;bottom:-13px;width:24px;height:20px;background:#080a11;border:1px solid #444b6d;border-radius:5px}.teaser-robot:before{left:10px}.teaser-robot:after{right:10px}
+.teaser-robot span{position:absolute;width:18px;height:18px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:#8b93ff;box-shadow:0 0 20px #8b93ff}
+.teaser-scan{position:absolute;left:0;right:0;top:0;height:2px;background:#63e6be;box-shadow:0 0 18px #63e6be;opacity:.7;animation:teaser-scan 3s linear infinite}@keyframes teaser-scan{0%{top:5%}100%{top:95%}}
+.teaser-hud{position:absolute;left:18px;bottom:18px;font:900 9px monospace;letter-spacing:.13em;color:#737b9e}.teaser-hud b{color:#63e6be;margin-left:10px}
+.control-teaser-copy{padding:42px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #252a46}.control-teaser-copy h3{font-size:clamp(32px,4vw,52px);line-height:.95;letter-spacing:-.05em;margin:10px 0 15px}.control-teaser-copy p{color:var(--muted);max-width:440px;margin:0}
+@media(max-width:820px){.control-teaser{grid-template-columns:1fr}.control-teaser-copy{border-left:0;border-top:1px solid #252a46;padding:30px}.control-teaser-visual{min-height:280px}}
+</style>
 </style>
 </head>
 <body>
@@ -347,50 +360,10 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 </div></section>
 
 <section id="lab" class="reveal"><div class="container">
-<div class="sectionhead"><div><div class="kicker">08 — Fearless Control Room</div><h2>Control the robot.</h2></div><p>A small taste of the systems thinking behind robotics — position, speed, controls and live telemetry.</p></div>
-
-<div class="control-room">
-<div class="control-room-top">
-<div class="system-title"><span class="system-pulse"></span><div><strong>FEARLESS CONTROL SYSTEM</strong><small>VIRTUAL ROBOT • TEST ENVIRONMENT</small></div></div>
-<div class="system-status">● ONLINE</div>
-</div>
-
-<div class="control-room-grid">
-<div class="control-stack">
-<div class="dashboard-card">
-<div class="dashboard-label">DRIVE CONTROL</div>
-<div class="dashboard-value"><span id="speedValue">50</span><small>% SPEED</small></div>
-<input id="speed" type="range" min="10" max="100" value="50">
-<div class="direction-pad">
-<button class="dash-btn" type="button" onclick="moveRobot(0,-1)" aria-label="Move up">▲</button>
-<button class="dash-btn" type="button" onclick="moveRobot(-1,0)" aria-label="Move left">◀</button>
-<button class="dash-btn reset-btn" type="button" onclick="resetRobot()" aria-label="Reset robot">●</button>
-<button class="dash-btn" type="button" onclick="moveRobot(1,0)" aria-label="Move right">▶</button>
-<button class="dash-btn" type="button" onclick="moveRobot(0,1)" aria-label="Move down">▼</button>
-</div>
-<div class="control-hint">ARROW KEYS • D-PAD • CLICK ARENA</div>
-</div>
-
-<div class="dashboard-card">
-<div class="dashboard-label">SYSTEMS</div>
-<div class="system-row"><span>Drive train</span><b class="ok">READY</b></div>
-<div class="system-row"><span>Navigation</span><b class="ok">ACTIVE</b></div>
-<div class="system-row"><span>Telemetry</span><b class="ok">LIVE</b></div>
-<div class="system-row"><span>Mode</span><b id="modeStatus">MANUAL</b></div>
-</div>
-</div>
-
-<div class="arena-card">
-<div class="arena-head"><div><div class="dashboard-label">FIELD VIEW</div><strong>ROBOT ARENA / LIVE POSITION</strong></div><div class="coordinates" id="telemetry">X 50% <span>•</span> Y 50%</div></div>
-<div class="robotstage control-arena" id="robotStage" aria-label="Robot movement arena">
-<div class="field-corner corner-tl"></div><div class="field-corner corner-tr"></div><div class="field-corner corner-bl"></div><div class="field-corner corner-br"></div>
-<div class="field-center-line"></div><div class="field-center-dot"></div>
-<div class="robot"><div class="robot-core"></div><span class="wheel w1"></span><span class="wheel w2"></span></div>
-<div class="target-reticle" id="targetReticle"></div>
-<div class="arena-crosshair"></div>
-</div>
-<div class="arena-footer"><span>FIELD STATUS <b>READY</b></span><span>INPUT <b>MANUAL</b></span><span>LINK <b>STABLE</b></span></div>
-</div>
+<div class="sectionhead"><div><div class="kicker">08 — Interactive Experience</div><h2>Control the robot.</h2></div><p>Curious what it feels like to drive a robot? Step inside the Fearless Control Room.</p></div>
+<div class="control-teaser">
+<div class="control-teaser-visual"><div class="teaser-grid"></div><div class="teaser-cross"></div><div class="teaser-robot"><span></span></div><div class="teaser-scan"></div><div class="teaser-hud">TF / CONTROL SYSTEM <b>READY</b></div></div>
+<div class="control-teaser-copy"><div class="kicker">FEARLESS CONTROL SYSTEM</div><h3>Your turn to drive.</h3><p>Explore a virtual robot arena, change speed, move the robot and test your controls. The full experience lives on its own page.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="control-room.html">Enter Control Room →</a></div></div>
 </div>
 </div></section>
 
