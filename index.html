@@ -221,18 +221,30 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 </style></style>
 
 <style>
-/* ENGINEERING PORTFOLIO EMBEDDED IN THE 2025–26 SEASON */
-.season-portfolio{margin-top:24px;padding:22px;border:1px solid rgba(255,116,23,.24);border-radius:18px;background:radial-gradient(circle at 92% 10%,rgba(255,116,23,.09),transparent 34%),linear-gradient(145deg,#15171c,#090a0e)}
-.season-portfolio-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
-.season-portfolio-kicker{font-size:10px;letter-spacing:.18em;font-weight:900;color:var(--orange2)}
-.season-portfolio-top h4{font-size:clamp(20px,2.4vw,28px);letter-spacing:-.035em;line-height:1.05;margin:9px 0}
-.season-portfolio-top p{font-size:13px;color:var(--muted);margin:0;max-width:570px}
-.season-portfolio-mark{flex:0 0 62px;height:62px;border:1px solid rgba(255,116,23,.3);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:25px;line-height:1;font-weight:950;color:var(--orange2)}
-.season-portfolio-mark span{font-size:8px;letter-spacing:.14em;margin-top:5px}
-.season-portfolio-topics{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}
-.season-portfolio-topics span{font-size:9px;letter-spacing:.07em;font-weight:800;color:#d4d4d8;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.025);padding:7px 9px;border-radius:999px}
-.season-portfolio-btn{display:inline-flex;max-width:100%;white-space:normal}
-@media(max-width:520px){.season-portfolio{padding:17px}.season-portfolio-top{gap:10px}.season-portfolio-mark{flex-basis:52px;height:52px;font-size:21px}.season-portfolio-btn{width:100%;justify-content:center}}
+/* ENGINEERING PORTFOLIO — EXPANDABLE SEASON EXPERIENCE */
+.season-portfolio-viewer{margin-top:24px;border:1px solid rgba(255,116,23,.25);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(255,116,23,.055),rgba(10,11,15,.98) 52%);transition:border-color .25s,background .25s}
+.season-portfolio-viewer:hover,.season-portfolio-viewer[open]{border-color:rgba(255,116,23,.5)}
+.season-portfolio-viewer summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:19px 20px}
+.season-portfolio-viewer summary::-webkit-details-marker{display:none}
+.spv-icon{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;border-radius:13px;background:rgba(255,116,23,.1);border:1px solid rgba(255,116,23,.25);color:var(--orange2);font-size:23px}
+.spv-copy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.spv-eyebrow{font-size:9px;font-weight:900;letter-spacing:.16em;color:var(--orange2)}
+.spv-copy strong{font-size:clamp(15px,2vw,19px);letter-spacing:-.025em;color:#fff}
+.spv-copy small{font-size:12px;color:var(--muted);line-height:1.5}
+.spv-toggle{flex:0 0 32px;width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:23px;color:#fff;transition:transform .25s,background .25s}
+.season-portfolio-viewer[open] .spv-toggle{transform:rotate(45deg);background:rgba(255,116,23,.12);border-color:rgba(255,116,23,.35)}
+.spv-content{padding:0 20px 20px;animation:spvReveal .3s ease}
+@keyframes spvReveal{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.spv-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:19px 0;border-top:1px solid rgba(255,255,255,.09)}
+.spv-intro h4{font-size:clamp(20px,2.8vw,29px);line-height:1.04;letter-spacing:-.04em;margin:8px 0}
+.spv-intro p{font-size:13px;color:var(--muted);margin:0;max-width:440px}
+.spv-intro .btn{flex-shrink:0}
+.spv-frame{height:clamp(420px,66vw,760px);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;background:#0b0c0f}
+.spv-frame iframe{display:block;width:100%;height:100%;border:0;background:#0b0c0f}
+.spv-note{font-size:11px;color:var(--muted);margin-top:11px;text-align:right}
+.spv-note a{color:var(--orange2);text-decoration:none}
+.spv-note a:hover{text-decoration:underline}
+@media(max-width:600px){.season-portfolio-viewer summary{padding:15px 13px;gap:11px}.spv-icon{flex-basis:38px;width:38px;height:38px}.spv-copy small{font-size:11px}.spv-toggle{flex-basis:28px;width:28px;height:28px}.spv-content{padding:0 12px 13px}.spv-intro{align-items:flex-start;flex-direction:column}.spv-intro .btn{width:100%;justify-content:center}.spv-frame{height:68vh;min-height:420px}.spv-note{text-align:left}}
 </style>
 
 
@@ -350,10 +362,18 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <article class="ftc-season-feature reverse">
 <div class="ftc-season-media"><img src="assets/2025-26/2025-26-design-award.jpg.jpg" alt="Team Fearless 2025–26 Design Award"><div class="ftc-season-overlay"><span>FTC • 2025–26</span><b>CHAPTER 03</b></div></div>
 <div class="ftc-season-copy"><div class="mini">2025–26 • DESIGN & COMPETITION</div><h3>DESIGN. BUILD. COMPETE.</h3><p>A season of stronger engineering, iteration and competition — ending with a Design Award, 2nd Place milestone.</p><div class="ftc-season-meta"><span>🏆 <small>DESIGN AWARD</small></span><span>2ND <small>PLACE</small></span><span>FTC <small>REGIONAL</small></span></div><div class="season-milestones"><span>MILESTONES</span><div class="season-milestones-list"><span><b>2026</b> DESIGN AWARD</span><span><b>2026</b> 2ND PLACE</span></div></div><a class="btn" href="#seasons">See the milestone →</a><div class="showcase-photo-strip-label">SEASON MOMENTS</div><div class="showcase-photo-strip four"><div class="showcase-photo"><img src="assets/2025-26/2025-26-team.jpg.jpg" alt="Team Fearless 2025–26 team"><span>TEAM</span></div><div class="showcase-photo"><img src="assets/2025-26/2025-26-robot.jpg.jpg" alt="Team Fearless 2025–26 robot"><span>ROBOT</span></div><div class="showcase-photo"><img src="assets/team/journey.jpg.jpg" alt="Team Fearless journey"><span>THE JOURNEY</span></div></div>
-<div class="season-portfolio">
-  <div class="season-portfolio-top"><div><span class="season-portfolio-kicker">OPEN THE BUILD LOG</span><h4>The story behind the robot.</h4><p>Explore our 2025–26 Engineering Portfolio — from CAD and prototypes to testing, outreach and the challenges we worked through.</p></div><div class="season-portfolio-mark">16<br><span>PAGES</span></div></div>
-  <div class="season-portfolio-topics"><span>ENGINEERING & DESIGN</span><span>OUTREACH</span><span>TESTING & ITERATION</span><span>LOW-COST INNOVATION</span></div>
-  <a class="btn primary season-portfolio-btn" href="https://drive.google.com/file/d/1phge6IFHbMT3fA22Ienj8b5S8N0PVr8y/view?usp=sharing" target="_blank" rel="noopener noreferrer">Read the 2025–26 Engineering Portfolio ↗</a>
+<details class="season-portfolio-viewer">
+  <summary>
+    <span class="spv-icon">↗</span>
+    <span class="spv-copy"><span class="spv-eyebrow">INSIDE THE BUILD • 2025–26</span><strong>Explore the Engineering Portfolio</strong><small>16 pages • Design, testing, outreach & lessons learned</small></span>
+    <span class="spv-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="spv-content">
+    <div class="spv-intro"><div><span class="season-portfolio-kicker">THE PROCESS, NOT JUST THE RESULT</span><h4>How we turned ideas into a robot.</h4><p>Browse the actual portfolio here, right inside our season story.</p></div><a class="btn primary" href="https://drive.google.com/file/d/1phge6IFHbMT3fA22Ienj8b5S8N0PVr8y/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open full document ↗</a></div>
+    <div class="spv-frame"><iframe src="https://drive.google.com/file/d/1phge6IFHbMT3fA22Ienj8b5S8N0PVr8y/preview" title="Team Fearless 2025–26 FTC Engineering Portfolio" loading="lazy" allow="autoplay"></iframe></div>
+    <div class="spv-note">If the preview does not load, use <a href="https://drive.google.com/file/d/1phge6IFHbMT3fA22Ienj8b5S8N0PVr8y/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open full document ↗</a>.</div>
+  </div>
+</details>
 </div>
 </div>
 </article>
