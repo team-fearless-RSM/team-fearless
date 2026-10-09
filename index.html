@@ -356,9 +356,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 .core-value.is-open .core-value-trigger{min-height:76px;padding:14px 17px 8px;justify-content:flex-start;text-align:left}
 .core-value.is-open .core-value-top{justify-content:flex-start;font-size:15px;letter-spacing:.12em}
 .core-value.is-open .core-value-top span:last-child{display:none}
-.core-value.is-open h3{max-height:50px;opacity:1;transform:translateY(0);padding:8px 17px 0}
-.core-value p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;padding:0 17px;max-height:0;opacity:0;overflow:hidden;transform:translateY(-5px);transition:max-height .32s ease,opacity .25s ease,transform .25s ease,padding .32s ease}
-.core-value.is-open p{max-height:64px;opacity:1;transform:translateY(0);padding:8px 17px 17px}
+.core-value.is-open h3{max-height:80px;opacity:1;transform:translateY(0);padding:8px 17px 0;text-align:left;overflow:visible;overflow-wrap:anywhere}
+.core-value p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;padding:0 17px;max-height:0;opacity:0;overflow:hidden;transform:translateY(-5px);transition:max-height .32s ease,opacity .25s ease,transform .25s ease,padding .32s ease;text-align:left;overflow-wrap:anywhere}
+.core-value.is-open p{max-height:120px;opacity:1;transform:translateY(0);padding:8px 17px 17px;overflow:visible}
 @media(max-width:900px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.core-value.is-open{grid-column:span 1}.core-value-trigger{min-height:95px}}
 @media(max-width:700px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.core-value-trigger{padding:12px;min-height:82px}.core-value-top{font-size:27px}.core-value h3{font-size:16px}.core-value p{padding-left:12px;padding-right:12px}.core-value.is-open .core-value-trigger{padding:12px 12px 6px}.core-value.is-open h3{padding:7px 12px 0}.core-value.is-open p{padding:7px 12px 12px}}
 @media(max-width:420px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.core-value-trigger{min-height:72px;padding:10px 6px}.core-value-top{font-size:24px}.core-value.is-open h3{font-size:14px}}
