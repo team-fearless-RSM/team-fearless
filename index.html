@@ -342,16 +342,22 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 }
 </style>
 <style>
-/* Team Fearless core values */
-.core-values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
-.core-value{min-width:0;padding:18px 19px 20px;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(12,13,17,.96));transition:transform .2s ease,border-color .2s ease}
-.core-value:hover{transform:translateY(-3px);border-color:rgba(255,116,23,.42)}
-.core-value-top{display:flex;align-items:center;justify-content:space-between;color:var(--orange2);font-size:10px;font-weight:900;letter-spacing:.15em}
-.core-value-top span:last-child{display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(255,116,23,.25);border-radius:9px;background:rgba(255,116,23,.07);font-size:17px}
-.core-value h3{font-size:19px;letter-spacing:-.025em;margin:12px 0 5px}
-.core-value p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
-@media(max-width:700px){.core-values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.core-value{padding:15px}}
-@media(max-width:420px){.core-values-grid{grid-template-columns:1fr}.core-value{padding:15px 16px}.core-value h3{margin-top:9px}}
+/* Team Fearless interactive core values */
+.core-values-hint{margin:22px 0 -10px;color:var(--muted);font-size:12px;letter-spacing:.04em}
+.core-values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;align-items:start}
+.core-value{min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(12,13,17,.96));overflow:hidden;transition:border-color .25s ease,background .25s ease}
+.core-value.is-open{border-color:rgba(255,116,23,.55);background:linear-gradient(145deg,rgba(255,116,23,.09),rgba(12,13,17,.97))}
+.core-value-trigger{width:100%;min-height:82px;padding:15px 17px;display:flex;flex-direction:column;gap:10px;text-align:left;color:inherit;background:transparent;border:0;cursor:pointer}
+.core-value-trigger:focus-visible{outline:2px solid var(--orange2);outline-offset:-4px;border-radius:12px}
+.core-value-top{display:flex;align-items:center;justify-content:space-between;width:100%;color:var(--orange2);font-size:10px;font-weight:900;letter-spacing:.15em}
+.core-value-top span:last-child{display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(255,116,23,.25);border-radius:9px;background:rgba(255,116,23,.07);font-size:17px;transition:transform .25s ease,background .25s ease}
+.core-value.is-open .core-value-top span:last-child{transform:rotate(45deg);background:rgba(255,116,23,.16)}
+.core-value h3{font-size:18px;letter-spacing:-.025em;margin:0}
+.core-value p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;padding:0 17px;max-height:0;opacity:0;overflow:hidden;transform:translateY(-5px);transition:max-height .32s ease,opacity .25s ease,transform .25s ease,padding .32s ease}
+.core-value.is-open p{max-height:64px;opacity:1;transform:translateY(0);padding:0 17px 17px}
+@media(max-width:700px){.core-values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.core-value-trigger{padding:14px;min-height:78px}.core-value h3{font-size:16px}.core-value p{padding-left:14px;padding-right:14px}.core-value.is-open p{padding:0 14px 14px}}
+@media(max-width:420px){.core-values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.core-value-trigger{padding:12px;min-height:76px}.core-value h3{font-size:15px}.core-value-top span:last-child{width:25px;height:25px}}
+@media(prefers-reduced-motion:reduce){.core-value,.core-value p,.core-value-top span:last-child{transition:none}}
 </style>
 </head>
 <body>
@@ -396,14 +402,36 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 
 <section id="about" class="reveal"><div class="container">
 <div class="sectionhead"><div><div class="kicker">01 — Who we are</div><h2>Built by students.<br><span class="orange">Driven by possibility.</span></h2></div><p>At <strong style="color:#fff">iTeach RSM, Mundhwa</strong>, students from <strong style="color:#fff">Grades 8–10</strong> explore robotics, build solutions and learn together.</p></div>
+<p class="core-values-hint">OUR VALUES — SELECT ONE TO EXPLORE</p>
 <div class="core-values-grid" aria-label="Team Fearless core values">
-<article class="core-value"><div class="core-value-top"><span>01</span><span aria-hidden="true">⌕</span></div><h3>Discovery</h3><p>Explore new ideas.</p></article>
-<article class="core-value"><div class="core-value-top"><span>02</span><span aria-hidden="true">✳</span></div><h3>Innovation</h3><p>Create. Experiment. Improve.</p></article>
-<article class="core-value"><div class="core-value-top"><span>03</span><span aria-hidden="true">↗</span></div><h3>Impact</h3><p>Make a difference.</p></article>
-<article class="core-value"><div class="core-value-top"><span>04</span><span aria-hidden="true">◉</span></div><h3>Inclusion</h3><p>Respect every difference.</p></article>
-<article class="core-value"><div class="core-value-top"><span>05</span><span aria-hidden="true">⟷</span></div><h3>Teamwork</h3><p>Achieve more together.</p></article>
-<article class="core-value"><div class="core-value-top"><span>06</span><span aria-hidden="true">★</span></div><h3>Fun</h3><p>Learn, build, and enjoy.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-discovery"><span class="core-value-top"><span>01</span><span aria-hidden="true">⌕</span></span><h3>Discovery</h3></button><p id="value-discovery">Explore new ideas.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-innovation"><span class="core-value-top"><span>02</span><span aria-hidden="true">✳</span></span><h3>Innovation</h3></button><p id="value-innovation">Create. Experiment. Improve.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-impact"><span class="core-value-top"><span>03</span><span aria-hidden="true">↗</span></span><h3>Impact</h3></button><p id="value-impact">Make a difference.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-inclusion"><span class="core-value-top"><span>04</span><span aria-hidden="true">◉</span></span><h3>Inclusion</h3></button><p id="value-inclusion">Respect every difference.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-teamwork"><span class="core-value-top"><span>05</span><span aria-hidden="true">⟷</span></span><h3>Teamwork</h3></button><p id="value-teamwork">Achieve more together.</p></article>
+<article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-fun"><span class="core-value-top"><span>06</span><span aria-hidden="true">★</span></span><h3>Fun</h3></button><p id="value-fun">Learn, build, and enjoy.</p></article>
 </div>
+<script>
+(function(){
+ const grid=document.querySelector('.core-values-grid');
+ if(!grid||grid.dataset.interactiveReady)return;
+ grid.dataset.interactiveReady='true';
+ grid.querySelectorAll('.core-value-trigger').forEach(function(button){
+  button.addEventListener('click',function(){
+   const card=button.closest('.core-value');
+   const willOpen=!card.classList.contains('is-open');
+   grid.querySelectorAll('.core-value').forEach(function(item){
+    item.classList.remove('is-open');
+    item.querySelector('.core-value-trigger').setAttribute('aria-expanded','false');
+   });
+   if(willOpen){
+    card.classList.add('is-open');
+    button.setAttribute('aria-expanded','true');
+   }
+  });
+ });
+})();
+</script>
 <div style="text-align:center;margin:18px auto 0;max-width:760px;color:var(--muted);font-size:15px;line-height:1.6"><b style="color:#fff">Stay curious. Build together. Make an impact.</b></div>
 </div></section>
 
