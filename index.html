@@ -344,20 +344,25 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <style>
 /* Team Fearless interactive core values */
 .core-values-hint{margin:22px 0 -10px;color:var(--muted);font-size:12px;letter-spacing:.04em}
-.core-values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;align-items:start}
-.core-value{min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(12,13,17,.96));overflow:hidden;transition:border-color .25s ease,background .25s ease}
-.core-value.is-open{border-color:rgba(255,116,23,.55);background:linear-gradient(145deg,rgba(255,116,23,.09),rgba(12,13,17,.97))}
-.core-value-trigger{width:100%;min-height:82px;padding:15px 17px;display:flex;flex-direction:column;gap:10px;text-align:left;color:inherit;background:transparent;border:0;cursor:pointer}
+.core-values-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:22px;align-items:start}
+.core-value{min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(12,13,17,.96));overflow:hidden;transition:border-color .25s ease,background .25s ease,transform .25s ease}
+.core-value:hover{transform:translateY(-3px);border-color:rgba(255,116,23,.4)}
+.core-value.is-open{grid-column:span 2;border-color:rgba(255,116,23,.65);background:linear-gradient(145deg,rgba(255,116,23,.1),rgba(12,13,17,.97))}
+.core-value-trigger{width:100%;min-height:112px;padding:17px 12px;display:flex;align-items:center;justify-content:center;text-align:center;color:inherit;background:transparent;border:0;cursor:pointer}
 .core-value-trigger:focus-visible{outline:2px solid var(--orange2);outline-offset:-4px;border-radius:12px}
-.core-value-top{display:flex;align-items:center;justify-content:space-between;width:100%;color:var(--orange2);font-size:10px;font-weight:900;letter-spacing:.15em}
-.core-value-top span:last-child{display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(255,116,23,.25);border-radius:9px;background:rgba(255,116,23,.07);font-size:17px;transition:transform .25s ease,background .25s ease}
-.core-value.is-open .core-value-top span:last-child{transform:rotate(45deg);background:rgba(255,116,23,.16)}
-.core-value h3{font-size:18px;letter-spacing:-.025em;margin:0}
+.core-value-top{display:flex;align-items:center;justify-content:center;width:100%;color:var(--orange2);font-size:32px;font-weight:950;letter-spacing:-.05em;line-height:1}
+.core-value-top span:last-child{display:none}
+.core-value h3{font-size:18px;letter-spacing:-.025em;margin:0;padding:0 17px;max-height:0;opacity:0;overflow:hidden;transform:translateY(-5px);transition:max-height .32s ease,opacity .25s ease,transform .25s ease,padding .32s ease}
+.core-value.is-open .core-value-trigger{min-height:76px;padding:14px 17px 8px;justify-content:flex-start;text-align:left}
+.core-value.is-open .core-value-top{justify-content:flex-start;font-size:15px;letter-spacing:.12em}
+.core-value.is-open .core-value-top span:last-child{display:none}
+.core-value.is-open h3{max-height:50px;opacity:1;transform:translateY(0);padding:8px 17px 0}
 .core-value p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;padding:0 17px;max-height:0;opacity:0;overflow:hidden;transform:translateY(-5px);transition:max-height .32s ease,opacity .25s ease,transform .25s ease,padding .32s ease}
-.core-value.is-open p{max-height:64px;opacity:1;transform:translateY(0);padding:0 17px 17px}
-@media(max-width:700px){.core-values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.core-value-trigger{padding:14px;min-height:78px}.core-value h3{font-size:16px}.core-value p{padding-left:14px;padding-right:14px}.core-value.is-open p{padding:0 14px 14px}}
-@media(max-width:420px){.core-values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.core-value-trigger{padding:12px;min-height:76px}.core-value h3{font-size:15px}.core-value-top span:last-child{width:25px;height:25px}}
-@media(prefers-reduced-motion:reduce){.core-value,.core-value p,.core-value-top span:last-child{transition:none}}
+.core-value.is-open p{max-height:64px;opacity:1;transform:translateY(0);padding:8px 17px 17px}
+@media(max-width:900px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.core-value.is-open{grid-column:span 1}.core-value-trigger{min-height:95px}}
+@media(max-width:700px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.core-value-trigger{padding:12px;min-height:82px}.core-value-top{font-size:27px}.core-value h3{font-size:16px}.core-value p{padding-left:12px;padding-right:12px}.core-value.is-open .core-value-trigger{padding:12px 12px 6px}.core-value.is-open h3{padding:7px 12px 0}.core-value.is-open p{padding:7px 12px 12px}}
+@media(max-width:420px){.core-values-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.core-value-trigger{min-height:72px;padding:10px 6px}.core-value-top{font-size:24px}.core-value.is-open h3{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.core-value,.core-value h3,.core-value p{transition:none}}
 </style>
 </head>
 <body>
@@ -402,7 +407,7 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 
 <section id="about" class="reveal"><div class="container">
 <div class="sectionhead"><div><div class="kicker">01 — Who we are</div><h2>Built by students.<br><span class="orange">Driven by possibility.</span></h2></div><p>At <strong style="color:#fff">iTeach RSM, Mundhwa</strong>, students from <strong style="color:#fff">Grades 8–10</strong> explore robotics, build solutions and learn together.</p></div>
-<p class="core-values-hint">OUR VALUES — SELECT ONE TO EXPLORE</p>
+<p class="core-values-hint">OUR VALUES — TAP A NUMBER TO REVEAL</p>
 <div class="core-values-grid" aria-label="Team Fearless core values">
 <article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-discovery"><span class="core-value-top"><span>01</span><span aria-hidden="true">⌕</span></span><h3>Discovery</h3></button><p id="value-discovery">Explore new ideas.</p></article>
 <article class="core-value"><button class="core-value-trigger" type="button" aria-expanded="false" aria-controls="value-innovation"><span class="core-value-top"><span>02</span><span aria-hidden="true">✳</span></span><h3>Innovation</h3></button><p id="value-innovation">Create. Experiment. Improve.</p></article>
