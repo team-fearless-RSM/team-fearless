@@ -292,6 +292,55 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 @media(max-width:620px){.faq-grid{grid-template-columns:1fr}}
 </style>
 
+
+<style>
+/* WHY WE BUILT THIS — compact, unified one-view layout */
+#purpose{padding:54px 0}
+#purpose .purpose-intro{gap:clamp(22px,3vw,42px);margin-bottom:24px;grid-template-columns:1.08fr .92fr}
+#purpose .purpose-intro-copy h2{font-size:clamp(34px,4vw,52px);line-height:1; margin:9px 0 12px}
+#purpose .purpose-intro-copy>p{font-size:14px;line-height:1.55;max-width:590px}
+#purpose .purpose-intro-copy .actions{margin-top:16px;gap:9px;flex-wrap:wrap}
+#purpose .purpose-pullquote{min-height:185px;padding:24px 28px;border-radius:18px}
+#purpose .purpose-quote-mark{font-size:54px}
+#purpose .purpose-pullquote p{font-size:clamp(23px,2.5vw,32px);margin:10px 0 14px}
+#purpose .purpose-path-head{align-items:center;margin-bottom:12px}
+#purpose .purpose-path-head .kicker{white-space:nowrap}
+#purpose .purpose-path-head p{font-size:12px;line-height:1.45}
+#purpose .purpose-path{gap:10px}
+#purpose .purpose-step{min-height:155px;padding:16px;border-radius:14px}
+#purpose .purpose-step-top .purpose-step-symbol{width:30px;height:30px;border-radius:9px;font-size:17px}
+#purpose .purpose-step h3{font-size:20px;margin:12px 0 5px}
+#purpose .purpose-step p{font-size:12px;line-height:1.5}
+#purpose .purpose-step-foot{padding-top:12px;font-size:8px}
+#purpose .purpose-bottomline{margin-top:12px;padding:13px 18px;border-radius:12px}
+#purpose .purpose-bottomline strong{font-size:14px}
+#purpose .purpose-bottomline p{font-size:11px;line-height:1.45;margin-top:3px}
+#purpose .purpose-bottom-tags span{padding:6px 8px;font-size:8px}
+@media(max-width:820px){
+ #purpose{padding:56px 0}
+ #purpose .purpose-intro{grid-template-columns:1fr;gap:16px;margin-bottom:24px}
+ #purpose .purpose-pullquote{min-height:150px}
+ #purpose .purpose-path{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #purpose .purpose-path-head{display:flex;align-items:flex-start;flex-direction:column;gap:6px}
+ #purpose .purpose-step{min-height:175px}
+ #purpose .purpose-bottomline{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+}
+@media(max-width:600px){
+ #purpose{padding:44px 0}
+ #purpose .purpose-intro-copy h2{font-size:clamp(32px,9vw,43px)}
+ #purpose .purpose-path{grid-template-columns:1fr}
+ #purpose .purpose-step{min-height:0}
+ #purpose .purpose-step-foot{padding-top:10px}
+ #purpose .purpose-bottomline{flex-direction:column;gap:12px}
+}
+@media(min-width:821px) and (max-height:800px){
+ #purpose{padding:36px 0}
+ #purpose .purpose-intro{margin-bottom:16px}
+ #purpose .purpose-pullquote{min-height:160px}
+ #purpose .purpose-step{min-height:140px;padding:13px}
+ #purpose .purpose-bottomline{padding:10px 16px}
+}
+</style>
 </head>
 <body>
 <nav><div class="container nav">
