@@ -3,9 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Team Fearless — FTC Robotics, STEM, innovation and student engineering at iTeach RSM, Mundhwa, Pune.">
+<meta name="description" content="Meet Team Fearless at iTeach RSM, Mundhwa, Pune — students learning through FTC, NRL, hands-on engineering, teamwork and STEM outreach.">
 <meta name="theme-color" content="#08090c">
-<title>Team Fearless 🦁 | FTC & NRL Robotics</title>
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://team-fearless-rsm.github.io/team-fearless/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Team Fearless">
+<meta property="og:title" content="Team Fearless 🦁 | Build. Break. Rebuild.">
+<meta property="og:description" content="Student robotics at iTeach RSM. Follow our FTC and NRL journey, explore the build process and discover hands-on STEM.">
+<meta property="og:url" content="https://team-fearless-rsm.github.io/team-fearless/">
+<meta property="og:image" content="https://team-fearless-rsm.github.io/team-fearless/assets/branding/logo.jpg.png">
+<meta property="og:image:alt" content="Team Fearless lion logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Team Fearless 🦁 | Build. Break. Rebuild.">
+<meta name="twitter:description" content="Student robotics at iTeach RSM — FTC, NRL, engineering and STEM outreach.">
+<meta name="twitter:image" content="https://team-fearless-rsm.github.io/team-fearless/assets/branding/logo.jpg.png">
+<title>Team Fearless 🦁 | FTC, NRL & Student Robotics at iTeach RSM</title>
 <style>
 :root{--bg:#06070a;--panel:#101218;--panel2:#151922;--text:#f7f7f7;--muted:#9ba2ad;--orange:#ff7417;--orange2:#ffb15f;--line:#272c36;--green:#63e6be;--max:1180px}
 *{box-sizing:border-box;scroll-behavior:smooth}html{scroll-padding-top:78px}
@@ -374,12 +387,24 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 
 
 
+
+<style>
+/* OUTREACH IMPACT, MOBILE POLISH & ACCESSIBILITY */
+.purpose-impact-note{display:grid;grid-template-columns:minmax(150px,.35fr) 1fr;gap:22px;align-items:start;margin-top:12px;padding:18px 20px;border:1px solid rgba(255,116,23,.24);border-radius:16px;background:linear-gradient(100deg,rgba(255,116,23,.09),rgba(16,18,24,.72))}
+.purpose-impact-label{font-size:10px;font-weight:950;letter-spacing:.13em;color:var(--orange);padding-top:3px}
+.purpose-impact-note p{margin:0;color:#e0e3e9;font-size:13px;line-height:1.65}
+.btn:focus-visible,.navlinks a:focus-visible,.menu:focus-visible,.contactform input:focus-visible,.contactform select:focus-visible,.contactform textarea:focus-visible{outline:3px solid var(--orange2);outline-offset:3px}
+.contactform button:disabled{opacity:.65;cursor:wait;transform:none}
+@media(max-width:820px){.purpose-impact-note{grid-template-columns:1fr;gap:8px}.hero-copy{font-size:16px;max-width:620px}.hero .actions{gap:9px}.hero .actions .btn{min-height:44px}}
+@media(max-width:560px){.hero-brand-stack .hero-logo{width:112px;height:112px}.hero-iteach-top-logo{max-width:170px;height:auto}.hero-season-line{font-size:10px}.hero .actions{flex-direction:column;align-items:stretch}.hero .actions .btn{width:100%}.hero-footnote{flex-wrap:wrap;justify-content:center;gap:7px}.purpose-impact-note{padding:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
 <nav><div class="container nav">
 <a class="brand" href="#home"><img class="brand-logo" src="assets/branding/logo.jpg.png" alt="Team Fearless logo"><span>TEAM <b>FEARLESS</b></span></a>
-<div class="navlinks"><a href="#about">About</a><a href="#purpose">Our Purpose</a><a href="#seasons">FTC</a><a href="#nrl">NRL</a><a href="#quick-answers">Quick Answers</a><a href="#team">Team</a><a href="#lab">Interactive</a><a href="#contact">Contact</a></div>
-<button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+<div class="navlinks" id="primary-navigation"><a href="#about">About</a><a href="#purpose">Our Purpose</a><a href="#seasons">FTC</a><a href="#nrl">NRL</a><a href="#quick-answers">Quick Answers</a><a href="#team">Team</a><a href="#lab">Interactive</a><a href="#contact">Contact</a></div>
+<button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" onclick="toggleMenu()">☰</button>
 </div></nav>
 
 <main id="home">
@@ -390,9 +415,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <div class="badge pulse">🤖 FTC • 🏆 NRL • STEM • Innovation</div>
 <div class="hero-season-line"><span>2026–27</span><i></i><span>BUILDING NOW</span></div>
 <h1>BUILD.<br>BREAK.<br><span class="orange">REBUILD.</span></h1>
-<p class="hero-copy">Ideas become machines here. Students design, test, fail, learn and build again — one fearless iteration at a time.</p>
+<p class="hero-copy">A student robotics team at iTeach RSM, Mundhwa, Pune — learning by designing, building, testing and trying again through FTC, NRL and hands-on STEM.</p>
 <div class="tagline">KAR KE DIKHANGE — HA BHAI HA!</div>
-<div class="actions"><a class="btn primary" href="#seasons">Explore FTC →</a><a class="btn" href="#nrl">Explore NRL →</a><a class="btn" href="#lab">Try the Interactive Lab</a></div>
+<div class="actions"><a class="btn primary" href="#seasons">Explore FTC Journey →</a><a class="btn" href="#nrl">Discover NRL →</a><a class="btn" href="#lab">Try the Robot Simulator →</a></div>
 <div class="hero-footnote"><span>TEAM FEARLESS</span><span>•</span><span>NO SHORTCUTS. JUST BUILDS.</span></div>
 </div>
 </header>
@@ -433,8 +458,8 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <div class="purpose-intro-copy">
 <div class="kicker">02 — Why we built this</div>
 <h2>Robotics should feel<br><span class="orange">possible for everyone.</span></h2>
-<p>We built this space to share the real journey of Team Fearless — the ideas, experiments, setbacks, breakthroughs and people behind our robots. Robotics is more than a machine on a field; it is a way to turn curiosity into something real.</p>
-<p>Through FIRST Tech Challenge (FTC) and National Robotics League (NRL), we want students to see that STEM is not reserved for experts or people with expensive equipment. It starts with asking questions, trying things, learning from failure and building together.</p>
+<p>Team Fearless is more than a robot on a competition field. Our journey includes the first idea, rough prototypes, debugging, redesigns, teamwork and the moment a mechanism finally works. This website shares those steps — not just the final result.</p>
+<p>Through FIRST Tech Challenge (FTC), National Robotics League (NRL) and hands-on STEM outreach, we want students to see that engineering is something they can try. You do not need to know everything before you begin; curiosity, practice and a team willing to learn are a powerful starting point.</p>
 <div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#seasons">Explore our journey →</a><a class="btn" href="#contact">Connect with us</a></div>
 </div>
 <div class="purpose-pullquote"><span class="purpose-quote-mark">“</span><p>Curiosity starts it. Building moves it forward.</p><span class="purpose-quote-foot">EXPLORE • BUILD • SHARE</span><div class="purpose-orbit purpose-orbit-one"></div><div class="purpose-orbit purpose-orbit-two"></div></div>
@@ -446,6 +471,7 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <article class="purpose-mission-card"><span class="purpose-mission-index">04 / CONNECT & COLLABORATE</span><h3>Build a wider community</h3><p>Give students, educators, mentors and supporters a way to discover our work.</p></article>
 </div>
 <div class="purpose-bottom-note"><span class="purpose-bottom-mark">OUR PURPOSE</span><p>A living record of learning in progress — built to share ideas, celebrate teamwork and encourage more students to take their first step into robotics.</p></div>
+<div class="purpose-impact-note"><span class="purpose-impact-label">IMPACT BEYOND THE ROBOT</span><p>We want every build season to create more than a machine: stronger problem-solving, practical engineering experience, shared knowledge and more opportunities for students to discover STEM. We will keep sharing the work and learning behind that goal as the journey grows.</p></div>
 <style>
 #purpose .purpose-intro{margin-bottom:18px}
 #purpose .purpose-intro-copy>p{font-size:12px;line-height:1.55;max-width:650px;margin-bottom:8px}
@@ -600,8 +626,9 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 <footer><div class="container">© 2026 <strong>Team Fearless</strong> • iTeach RSM • Built with curiosity & code 🦁<br><a href="#home">Back to top ↑</a></div></footer>
 
 <script>
-function toggleMenu(){const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex'}
-async function submitContact(e){e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]');status.textContent='Sending…';button.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(res.ok){form.reset();status.textContent='Message sent ✓ Thank you for contacting Team Fearless.'}else{status.textContent='Could not send the message. Please try again or email us directly.'}}catch(err){status.textContent='Connection issue. Please try again or email us directly.'}finally{button.disabled=false}}
+function toggleMenu(){const n=document.querySelector('.navlinks'),b=document.querySelector('.menu'),open=n.style.display!=='flex';n.style.display=open?'flex':'none';b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu')}
+document.addEventListener('DOMContentLoaded',()=>{const n=document.querySelector('.navlinks'),b=document.querySelector('.menu');n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=820){n.style.display='none';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu')}}));window.addEventListener('resize',()=>{if(window.innerWidth>820){n.style.display='';b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu')}})})
+async function submitContact(e){e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button[type="submit"]');status.textContent='Sending…';button.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(res.ok){form.reset();status.textContent='Message sent ✓ Thank you for contacting Team Fearless.'}else{status.textContent='Could not send the message. Please try again in a moment.'}}catch(err){status.textContent='Connection issue. Check your connection and try again.'}finally{button.disabled=false}}
 
 
 // Inline mode tabs + programming/autonomous tools
