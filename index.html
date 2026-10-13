@@ -641,6 +641,10 @@ async function submitContact(e){e.preventDefault();const form=e.currentTarget,st
 
 // Reveal sections safely so the page is visible even if animations are unsupported.
 document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));});
+ 
+// Preserve the exact homepage position when visiting the full Control Room and returning.
+(()=>{const key='tfControlRoomScrollY';function rememberPosition(){try{sessionStorage.setItem(key,String(window.scrollY||window.pageYOffset||0))}catch(e){}}document.querySelectorAll('a[href="control-room.html"]').forEach(link=>link.addEventListener('click',rememberPosition));function restorePosition(){try{const saved=sessionStorage.getItem(key);if(saved===null)return;sessionStorage.removeItem(key);const y=Number(saved);requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo(0,y)))}catch(e){}}window.addEventListener('pageshow',restorePosition);document.addEventListener('DOMContentLoaded',restorePosition)})();
+
 </script>
 </body>
 </html>
