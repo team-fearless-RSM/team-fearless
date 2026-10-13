@@ -401,12 +401,11 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 <style>
-/* Consistent interactive hover effect for every site button */
-.btn{position:relative;isolation:isolate;overflow:hidden;transition:color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+/* All buttons stay transparent until the orange hover animation */
+.btn{position:relative;isolation:isolate;overflow:hidden;background:transparent!important;color:var(--text);border:1px solid rgba(255,116,23,.7);transition:color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .btn:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,var(--orange),var(--orange2),#ff8a3d);transform:translateY(102%);transition:transform .32s cubic-bezier(.2,.75,.25,1);border-radius:inherit;pointer-events:none}
-.btn:hover,.btn:focus-visible{border-color:var(--orange)!important;box-shadow:0 8px 26px rgba(255,116,23,.24);transform:translateY(-3px)}
+.btn:hover,.btn:focus-visible{background:transparent!important;border-color:var(--orange)!important;box-shadow:0 8px 26px rgba(255,116,23,.24);transform:translateY(-3px);color:#111}
 .btn:hover:before,.btn:focus-visible:before{transform:translateY(0)}
-.btn:hover,.btn:focus-visible{color:#111}
 .btn:focus-visible{outline:2px solid var(--orange2);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.btn,.btn:before{transition:none}.btn:hover,.btn:focus-visible{transform:none}}
 </style>
