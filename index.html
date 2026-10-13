@@ -286,6 +286,58 @@ section:hover>.container>.sectionhead .kicker{letter-spacing:.22em}
 @media(max-width:820px){.motion-grid{background-size:38px 38px;opacity:.11}.cursor-aura{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.cursor-aura,.motion-grid{display:none}section.reveal{opacity:1;transform:none;filter:none}}
 
+
+/* TEAM FEARLESS FULL-PAGE INTERACTION LAYER */
+:root{--tf-glow:rgba(255,116,23,.18);--tf-edge:rgba(255,116,23,.45)}
+body{background-image:radial-gradient(ellipse at 12% 22%,rgba(255,116,23,.045),transparent 34%),radial-gradient(ellipse at 88% 58%,rgba(255,116,23,.035),transparent 36%),radial-gradient(circle at 50% 100%,rgba(255,116,23,.045),transparent 28%)}
+section{position:relative;isolation:isolate}
+section:not(.hero):before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background:radial-gradient(ellipse at var(--section-x,50%) var(--section-y,35%),rgba(255,116,23,.065),transparent 48%);transition:opacity .65s ease}
+section:not(.hero):hover:before{opacity:1}
+.sectionhead{position:relative}
+.sectionhead h2{transition:transform .4s cubic-bezier(.2,.75,.25,1),text-shadow .4s ease}
+section:hover .sectionhead h2{text-shadow:0 0 28px rgba(255,116,23,.10)}
+.sectionhead .kicker{display:inline-flex;align-items:center;gap:9px}
+.sectionhead .kicker:before{content:"";display:inline-block;width:18px;height:2px;background:var(--orange);box-shadow:0 0 10px rgba(255,116,23,.55);transition:width .35s ease}
+section:hover .sectionhead .kicker:before{width:34px}
+.motion-item{opacity:0;transform:translateY(24px) scale(.985);filter:blur(2px);transition:opacity .65s cubic-bezier(.2,.75,.25,1),transform .65s cubic-bezier(.2,.75,.25,1),filter .65s ease;transition-delay:var(--motion-delay,0ms)}
+.motion-item.motion-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+.motion-tilt{transform-style:preserve-3d;will-change:transform}
+.motion-tilt.motion-visible:hover{transform:perspective(900px) translateY(-5px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));box-shadow:0 20px 48px rgba(0,0,0,.28),0 0 28px rgba(255,116,23,.09)}
+.card:after,.role-card:after,.purpose-mission-card:after,.faq-item:after,.contactbox:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 15%,rgba(255,255,255,.045) 42%,transparent 65%);transform:translateX(-120%);transition:opacity .3s ease}
+.card,.role-card,.purpose-mission-card,.faq-item,.contactbox{position:relative;overflow:hidden}
+.card:hover:after,.role-card:hover:after,.purpose-mission-card:hover:after,.faq-item:hover:after,.contactbox:hover:after{opacity:1;animation:tf-sheen .85s ease}
+.season:before,.older-season:before,.ftc-season-feature:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(120deg,transparent 20%,rgba(255,116,23,.08) 48%,transparent 72%);transform:translateX(-120%);transition:transform .8s ease}
+.season:hover:before,.older-season:hover:before,.ftc-season-feature:hover:before{transform:translateX(120%)}
+.award{position:relative;overflow:hidden}
+.award:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease}
+.award:hover:before{transform:scaleY(1)}
+.gallery .tile:before{content:"VIEW PROJECT ↗";position:absolute;right:15px;top:15px;z-index:4;font-size:9px;letter-spacing:.12em;font-weight:950;color:white;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 9px;background:rgba(4,5,8,.5);opacity:0;transform:translateY(-5px);transition:opacity .25s ease,transform .25s ease}
+.gallery .tile:hover:before{opacity:1;transform:translateY(0)}
+.core-value{cursor:default}
+.core-value:hover{transform:translateY(-4px) scale(1.015)}
+.faq-item{transition:border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+.faq-item:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.22),0 0 20px rgba(255,116,23,.06)}
+.role-card:hover,.purpose-mission-card:hover,.contactbox:hover{border-color:rgba(255,116,23,.65);box-shadow:0 16px 38px rgba(0,0,0,.23),0 0 24px rgba(255,116,23,.08)}
+.contactform input,.contactform select,.contactform textarea{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.contactform input:focus,.contactform select:focus,.contactform textarea:focus{box-shadow:0 0 0 4px rgba(255,116,23,.07);transform:translateY(-1px)}
+.navlinks a[aria-current="location"]{color:var(--orange2)}
+.navlinks a[aria-current="location"]:after{right:0}
+#team .mentor-photo,#team .mentor-roster-card img{transition:transform .45s cubic-bezier(.2,.75,.25,1),filter .45s ease,box-shadow .45s ease}
+#team .mentor-photo:hover,#team .mentor-roster-card:hover img{transform:scale(1.055) rotate(2deg);filter:saturate(1.15);box-shadow:0 0 30px rgba(255,116,23,.25)}
+.nrl-live-dot,.status-dot{animation:tf-status-pulse 2s ease-in-out infinite}
+.nrl-scan{animation:tf-scan 5s linear infinite}
+.purpose-orbit-one{animation:tf-orbit 22s linear infinite}
+.purpose-orbit-two{animation:tf-orbit 30s linear infinite reverse}
+.teaser-robot{animation:tf-robot-float 4s ease-in-out infinite}
+.btn:focus-visible,.navlinks a:focus-visible{outline-offset:4px}
+@keyframes tf-sheen{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes tf-status-pulse{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.48;filter:brightness(1.35)}}
+@keyframes tf-scan{0%{transform:translateY(-110%);opacity:0}12%{opacity:.8}85%{opacity:.5}100%{transform:translateY(110%);opacity:0}}
+@keyframes tf-orbit{to{transform:rotate(360deg)}}
+@keyframes tf-robot-float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@media(max-width:820px){.motion-item{filter:none}.motion-tilt.motion-visible:hover{transform:translateY(-2px)}.gallery .tile:before{display:none}}
+@media(prefers-reduced-motion:reduce){.motion-item{opacity:1;transform:none;filter:none;transition:none}.motion-tilt{transform:none!important;will-change:auto}.card:after,.role-card:after,.purpose-mission-card:after,.faq-item:after,.contactbox:after,.season:before,.older-season:before,.ftc-season-feature:before,.gallery .tile:before{animation:none!important;transition:none!important}.nrl-live-dot,.status-dot,.nrl-scan,.purpose-orbit-one,.purpose-orbit-two,.teaser-robot{animation:none!important}}
+
 </style></style>
 
 <style>
@@ -719,6 +771,29 @@ document.addEventListener('DOMContentLoaded',()=>{
  if('IntersectionObserver' in window&&sections.length){
   const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){sections.forEach(s=>{if(s.el===entry.target)s.a.setAttribute('aria-current','location');else s.a.removeAttribute('aria-current')})}}),{rootMargin:'-25% 0px -65% 0px'});
   sections.forEach(s=>navObserver.observe(s.el));
+ }
+})();
+</script>
+<script>
+/* Staggered section content, gentle card tilt, and subtle section spotlight. */
+(()=> {
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+ const selectors='.stats>.stat,.grid>.card,.seasons>.season,.timeline>.award,.gallery>.tile,.core-values-grid>.core-value,.faq-grid>.faq-item,.role-grid>.role-card,.purpose-mission-grid>.purpose-mission-card,.season-milestones-list>*,.contactgrid>.contactbox,.mentor-roster-grid>.mentor-roster-card,.current-season-grid>*,.nrl-launch-grid>*';
+ const items=[...document.querySelectorAll(selectors)];
+ items.forEach((el,i)=>{el.classList.add('motion-item');el.style.setProperty('--motion-delay',(i%4)*75+'ms')});
+ if(reduced||!('IntersectionObserver' in window)){items.forEach(el=>el.classList.add('motion-visible'))}
+ else{
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('motion-visible');io.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -25px 0px'});
+  items.forEach(el=>io.observe(el));
+ }
+ if(!reduced&&finePointer){
+  document.querySelectorAll('.card,.season,.role-card,.purpose-mission-card,.contactbox,.mentor-roster-card,.current-archive-card').forEach(el=>{
+   el.classList.add('motion-tilt');
+   el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const px=(e.clientX-r.left)/r.width-.5;const py=(e.clientY-r.top)/r.height-.5;el.style.setProperty('--tilt-x',(-py*2.8).toFixed(2)+'deg');el.style.setProperty('--tilt-y',(px*3.2).toFixed(2)+'deg')},{passive:true});
+   el.addEventListener('pointerleave',()=>{el.style.setProperty('--tilt-x','0deg');el.style.setProperty('--tilt-y','0deg')},{passive:true});
+  });
+  document.querySelectorAll('section:not(.hero)').forEach(section=>section.addEventListener('pointermove',e=>{const r=section.getBoundingClientRect();section.style.setProperty('--section-x',((e.clientX-r.left)/r.width*100)+'%');section.style.setProperty('--section-y',((e.clientY-r.top)/r.height*100)+'%')},{passive:true}));
  }
 })();
 </script>
