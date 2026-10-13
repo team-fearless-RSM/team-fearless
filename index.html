@@ -248,6 +248,44 @@ section:after{border-color:rgba(255,116,23,.12);box-shadow:0 0 80px rgba(255,116
 .control-teaser-split .control-teaser-visual{min-height:390px;order:2}
 .control-teaser-split .teaser-hud{margin-top:28px;align-self:flex-start}
 @media(max-width:800px){.control-teaser-split{grid-template-columns:1fr}.control-teaser-split .control-teaser-visual{order:0;min-height:300px}.control-teaser-split .control-teaser-copy{min-height:300px}}
+
+/* TEAM FEARLESS MOTION SYSTEM — cinematic, responsive, reduced-motion aware */
+:root{--motion-ease:cubic-bezier(.2,.75,.25,1)}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{overflow-x:hidden}
+.motion-progress{position:fixed;inset:0 auto auto 0;width:100%;height:3px;z-index:1001;pointer-events:none;background:linear-gradient(90deg,var(--orange),var(--orange2),#fff0d8);transform:scaleX(0);transform-origin:left;box-shadow:0 0 14px rgba(255,116,23,.65)}
+.motion-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 78%);animation:grid-drift 32s linear infinite}
+.cursor-aura{position:fixed;left:0;top:0;width:320px;height:320px;border-radius:50%;pointer-events:none;z-index:0;opacity:.11;background:radial-gradient(circle,rgba(255,116,23,.32),transparent 68%);transform:translate3d(var(--aura-x,-400px),var(--aura-y,-400px),0) translate(-50%,-50%);will-change:transform}
+.hero:before{animation:hero-drift 12s ease-in-out infinite alternate}
+.hero:after{animation:hero-drift 15s ease-in-out infinite alternate-reverse}
+.hero-logo{animation:logo-float 5s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(255,116,23,.18))}
+.hero .badge{animation:badge-in .8s var(--motion-ease) both}
+.hero h1{animation:hero-rise .9s .08s var(--motion-ease) both}
+.hero-copy{animation:hero-rise .9s .2s var(--motion-ease) both}
+.hero .actions{animation:hero-rise .9s .32s var(--motion-ease) both}
+section.reveal{transition:opacity .8s var(--motion-ease),transform .8s var(--motion-ease),filter .8s var(--motion-ease);filter:blur(4px)}
+section.reveal.show{filter:blur(0)}
+.card,.season,.award,.gallery .tile,.stat,.core-value,.contactbox,.contactform,.control-teaser-split,.current-archive-card{transition:transform .32s var(--motion-ease),border-color .32s ease,box-shadow .32s ease,background-color .32s ease}
+.card:hover,.season:hover,.gallery .tile:hover{box-shadow:0 18px 48px rgba(0,0,0,.28),0 0 24px rgba(255,116,23,.08)}
+.stat strong{transition:color .25s ease,text-shadow .25s ease}
+.stat:hover strong{color:var(--orange2);text-shadow:0 0 22px rgba(255,116,23,.3)}
+.navlinks a{position:relative;transition:color .22s ease}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--orange);transition:right .25s var(--motion-ease)}
+.navlinks a:hover:after,.navlinks a:focus-visible:after{right:0}
+.btn{transition:color .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+.btn:active{transform:translateY(-1px) scale(.985)}
+.brand-logo{transition:transform .4s var(--motion-ease),box-shadow .4s ease}
+.brand:hover .brand-logo{transform:rotate(-8deg) scale(1.06);box-shadow:0 0 26px rgba(255,116,23,.4)}
+.kicker{transition:letter-spacing .3s ease}
+section:hover>.container>.sectionhead .kicker{letter-spacing:.22em}
+@keyframes grid-drift{to{background-position:54px 54px}}
+@keyframes hero-drift{from{transform:translate3d(-12px,-8px,0) scale(.96)}to{transform:translate3d(18px,16px,0) scale(1.06)}}
+@keyframes logo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes badge-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:820px){.motion-grid{background-size:38px 38px;opacity:.11}.cursor-aura{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.cursor-aura,.motion-grid{display:none}section.reveal{opacity:1;transform:none;filter:none}}
+
 </style></style>
 
 <style>
@@ -650,11 +688,39 @@ async function submitContact(e){e.preventDefault();const form=e.currentTarget,st
 (()=>{const root=document.querySelector('.control-room-inline');if(!root)return;let runTimer=null,running=false,waypoints=[],adding=false;const $=s=>root.querySelector(s);const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));function log(s,cls=''){const d=document.createElement('div');d.className=cls;d.textContent=s;$('#inlineConsole').appendChild(d);$('#inlineConsole').scrollTop=$('#inlineConsole').scrollHeight}function setRunning(v,label){running=v;$('#inlineDrive').textContent=label;$('#bottomDrive').textContent=label}function command(line){const s=line.trim().replace(/#.*/,'');if(!s)return 80;const m=s.match(/^([A-Za-z]+)\\(([^)]*)\\)$/);if(!m)throw Error('Invalid: '+line);const a=m[2]?m[2].split(',').map(Number):[],name=m[1];if(a.some(Number.isNaN))throw Error('Invalid number: '+line);const speed=$('#inlineSpeed');let x=Number(root.querySelector('#inlineRobot').style.left.replace('%',''))||50,y=Number(root.querySelector('#inlineRobot').style.top.replace('%',''))||50,heading=Number(root.querySelector('#inlineHeading').textContent.replace('°',''))||0;if(name==='setSpeed'){speed.value=clamp(a[0],10,100);speed.dispatchEvent(new Event('input'));return 100}if(name==='forward'||name==='backward'){const d=(a[0]||0)/5*(name==='backward'?-1:1),r=heading*Math.PI/180;return moveTo(clamp(x+Math.sin(r)*d,6,94),clamp(y-Math.cos(r)*d,8,92))}if(name==='turnRight'||name==='turnLeft'){root.querySelector('#inlineHeading').textContent=((heading+(name==='turnRight'?a[0]:-a[0])+360)%360).toFixed(0)+'°';return 180}return name==='wait'?clamp(a[0]||0,0,3000):80}function moveTo(tx,ty){const robot=$('#inlineRobot');const sx=parseFloat(robot.style.left)||50,sy=parseFloat(robot.style.top)||50;let i=0,n=25;return new Promise(resolve=>{const tick=()=>{i++;robot.style.left=(sx+(tx-sx)*i/n)+'%';robot.style.top=(sy+(ty-sy)*i/n)+'%';$('#inlineXY').textContent=(sx+(tx-sx)*i/n).toFixed(0)+' / '+(sy+(ty-sy)*i/n).toFixed(0);$('#bottomXY').textContent=$('#inlineXY').textContent;if(i<n)runTimer=setTimeout(tick,22);else resolve(220)};tick()})}async function runCode(){if(running)return;setRunning(true,'RUNNING');log('[RUN] Program started.','console-ok');const lines=$('#inlineCode').value.split('\\n');try{for(const line of lines){if(!running)break;log('→ '+line);const delay=command(line);if(delay instanceof Promise)await delay;else await new Promise(r=>runTimer=setTimeout(r,Math.max(70,delay)))}}catch(e){log('[ERROR] '+e.message)}setRunning(false,'READY');if(running===false)log('[OK] Program complete.','console-ok')}$('#inlineRun').addEventListener('click',runCode);$('#inlineStop').addEventListener('click',()=>{running=false;clearTimeout(runTimer);setRunning(false,'READY');log('[STOP] Program stopped.','console-ok')});$('#inlineExample').addEventListener('click',()=>$('#inlineCode').value='setSpeed(65)\\nforward(20)\\nturnRight(90)\\nforward(25)\\nturnLeft(90)\\nbackward(15)');const routes={square:[[25,25],[75,25],[75,75],[25,75],[50,50]],zigzag:[[20,20],[80,20],[25,50],[80,80],[50,50]],dock:[[75,75],[75,25],[25,25],[25,75],[50,50]]};async function runRoute(points){if(running)return;running=true;$('#inlineDrive').textContent='RUNNING';$('#bottomDrive').textContent='RUNNING';for(const p of points){if(!running)break;await moveTo(p[0],p[1])}running=false;$('#inlineDrive').textContent='READY';$('#bottomDrive').textContent='READY'}root.querySelectorAll('[data-inline-route]').forEach(b=>b.addEventListener('click',()=>runRoute(routes[b.dataset.inlineRoute])));$('#inlineWaypoint').addEventListener('click',()=>{adding=!adding;$('#inlineWaypoint').textContent=adding?'CLICK FIELD':'+ ADD WAYPOINTS'});$('#inlineClear').addEventListener('click',()=>{waypoints=[];$('#inlineWpText').textContent='No waypoints.'});$('#inlineRunPath').addEventListener('click',()=>runRoute(waypoints));root.querySelector('#inlineArena').addEventListener('click',e=>{if(!adding)return;const r=e.currentTarget.getBoundingClientRect();waypoints.push([clamp((e.clientX-r.left)/r.width*100,6,94),clamp((e.clientY-r.top)/r.height*100,8,92)]);$('#inlineWpText').textContent=waypoints.map((p,i)=>(i+1)+': '+p[0].toFixed(0)+'/'+p[1].toFixed(0)).join('  →  ')});})();
 
 // Reveal sections safely so the page is visible even if animations are unsupported.
-document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));});
+// Reveal sections as they enter the viewport; retain a safe fallback for older browsers.
+document.addEventListener('DOMContentLoaded',()=>{
+ const items=[...document.querySelectorAll('.reveal')];
+ if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(el=>el.classList.add('show'));return;}
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target);}}),{threshold:.08,rootMargin:'0px 0px -45px 0px'});
+ items.forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';observer.observe(el);});
+});
  
 // Preserve the exact homepage position when visiting the full Control Room and returning.
 (()=>{const key='tfControlRoomScrollY';function rememberPosition(){try{sessionStorage.setItem(key,String(window.scrollY||window.pageYOffset||0))}catch(e){}}document.querySelectorAll('a[href="control-room.html"]').forEach(link=>link.addEventListener('click',rememberPosition));function restorePosition(){try{const saved=sessionStorage.getItem(key);if(saved===null)return;sessionStorage.removeItem(key);const y=Number(saved);requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo(0,y)))}catch(e){}}window.addEventListener('pageshow',restorePosition);document.addEventListener('DOMContentLoaded',restorePosition)})();
 
+</script>
+<script>
+/* Lightweight site-wide motion: scroll progress, ambient grid, pointer aura and active navigation. */
+(()=> {
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const progress=document.createElement('div');progress.className='motion-progress';progress.setAttribute('aria-hidden','true');
+ const grid=document.createElement('div');grid.className='motion-grid';grid.setAttribute('aria-hidden','true');
+ const aura=document.createElement('div');aura.className='cursor-aura';aura.setAttribute('aria-hidden','true');
+ document.body.prepend(grid);document.body.append(progress,aura);
+ let scheduled=false;
+ const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';scheduled=false;};
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update)}},{passive:true});window.addEventListener('resize',update,{passive:true});update();
+ if(!reduced&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+  window.addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--aura-x',e.clientX+'px');document.documentElement.style.setProperty('--aura-y',e.clientY+'px')},{passive:true});
+ }
+ const navLinks=[...document.querySelectorAll('.navlinks a[href^="#"]')];
+ const sections=navLinks.map(a=>({a,el:document.querySelector(a.getAttribute('href'))})).filter(x=>x.el);
+ if('IntersectionObserver' in window&&sections.length){
+  const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){sections.forEach(s=>{if(s.el===entry.target)s.a.setAttribute('aria-current','location');else s.a.removeAttribute('aria-current')})}}),{rootMargin:'-25% 0px -65% 0px'});
+  sections.forEach(s=>navObserver.observe(s.el));
+ }
+})();
 </script>
 </body>
 </html>
